@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!--Appium 服务关键字 -->
+	<capability>
+		<appiumVersion>1.0</appiumVersion>
+		<autoLaunch>true</autoLaunch>
+		<noReset>false</noReset>
+		<language>zh-Hans</language>
+	</capability>
+	<androidCapability>
+		<app>D:/android_apk/mcontact_4.0.0.apk</app>
+		<udid>0bd08bcc</udid>
+		<platformName>Android</platformName>
+		<platformVersion>4.3</platformVersion>
+		<deviceName>GT_I9308I</deviceName>
+		<appPackage>com.chinamobile.contacts.im</appPackage>
+		<appActivity>com.chinamobile.contacts.im.LoadingPage</appActivity>
+		<unicodeKeyboard>true</unicodeKeyboard>
+		<resetKeyboard>true</resetKeyboard>
+		<noSign>true</noSign>
+	</androidCapability>
+	<!--引导流 关键字驱动,引导至所需模块再开始遍历 -->
+	<androidGuideFlow>
+		<step>click>>com.chinamobile.contacts.im:id/skip_btn1</step>
+		<step>click>>com.chinamobile.contacts.im:id/dialog_btn_positive</step>
+	</androidGuideFlow>
+	<rule>
+		<!--窗口鉴定策略,默认取前8个节点生成md5 -->
+		<identify-default>8</identify-default>
+		<!--窗口执行顺序 1:从上到下(默认) 2:从下到上 -->
+		<reverse>1</reverse>
+		<!--控件白名单 -->
+		<click>
+			<class>UIAImage</class>
+			<class>UIAButton</class>
+			<class>UIASwitch</class>
+			<class>UIATableCell</class>
+			<class>UIAStaticText</class>
+			<class>UIAPickerWheel</class>
+			<class>UIACollectionCell</class>
+			<class>android.widget.Button</class>
+			<class>android.widget.ImageButton</class>
+			<class>android.widget.TextView</class>
+			<class>android.widget.ImageView</class>
+			<class>android.widget.FrameLayout</class>
+			<class>android.widget.LinearLayout</class>
+		</click>
+		<input>
+			<class>UIATextField</class>
+			<class>UIASearchBar</class>
+			<class>UIASecureTextField</class>
+			<class>android.widget.EditText</class>
+		</input>
+		<!--触发器 条件>>动作 支持返回,点击,手势密码解锁,延时等待 -->
+		<trigger>
+			<item>拍照>>back</item>
+		</trigger>
+		<!--过滤级别 1:clazz+text+content_desc+resourceId 2:winID+clazz+text+content_desc+resourceId 
+			3:taskID -->
+		<filter>2</filter>
+		<!--退出遍历的条件:同一窗口内的停留次数 -->
+		<allowSameWinTimes>10</allowSameWinTimes>
+	</rule>
+	<!--app日志 -->
+	<log>
+		<android>adb -s #udid# logcat -b main -b system -b events -b radio *:D
+			| grep contacts</android>
+	</log>
+	<global>
+		<!--Appium port -->
+		<port>4723</port>
+		<!--Appium host -->
+		<host>127.0.0.1</host>
+		<!--测试类型 1.android 2.ios 3.web -->
+		<mode>1</mode>
+		<!--运行模式 1.遍历模式 2.业务场景模式 -->
+		<runMode>1</runMode>
+		<!--遍历深度 -->
+		<depth>8</depth>
+		<!--截图和视频的目录 -->
+		<screenshot>D:\\temp\\png\</screenshot>
+		<!--启动appium -->
+		<runServer>appium -p #port# -bp 4724 --session-override --command-timeout 7200 --udid
+			#udid#</runServer>
+		<!--遍历时间 分 -->
+		<duration>2</duration>
+		<!--延时等待 秒 -->
+		<interval>3</interval>
+		<!--超时 秒 -->
+		<timeout>30</timeout>
+	</global>
+</config>

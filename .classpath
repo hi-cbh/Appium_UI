@@ -2,5 +2,26 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_31"/>
+	<classpathentry kind="lib" path="libs/appium_contact.jar"/>
+	<classpathentry kind="lib" path="libs/arrow-0.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/arrow-0.1.0.zip"/>
+	<classpathentry kind="lib" path="libs/file-handling.jar"/>
+	<classpathentry kind="lib" path="libs/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="libs/jai_imageio-1.1.jar"/>
+	<classpathentry kind="lib" path="libs/java-client-3.4.1.jar"/>
+	<classpathentry kind="lib" path="libs/jmf.jar"/>
+	<classpathentry kind="lib" path="libs/log4j-1.2.12.jar"/>
+	<classpathentry kind="lib" path="libs/reportng-1.1.5.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-chrome-driver-2.47.1.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-edge-driver-2.47.1.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-firefox-driver-2.47.1.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-htmlunit-driver-2.47.1.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-ie-driver-2.47.1.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-java-2.44.0.zip"/>
+	<classpathentry kind="lib" path="libs/selenium-java-2.53.0.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-safari-driver-2.47.1.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-server-standalone-2.44.0.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-server-standalone-2.53.0.jar"/>
+	<classpathentry kind="lib" path="libs/velocity-1.7-dep.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
