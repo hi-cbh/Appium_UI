@@ -21,15 +21,24 @@ import java.util.Stack;
  * Created by quqing on 16/5/11.
  */
 public class AndroidRobot extends Robot {
+	/**
+	 * 将配置文件传给父类
+	 * @param configFile
+	 */
     public AndroidRobot(String configFile) {
         super(configFile);
     }
 
+    
     @Override
     protected String getRemoveApp() {
+    	//获取removeApp
         return config.getAppPackage();
     }
 
+    /**
+     * 从日志提取错误信息
+     */
     @Override
     protected void catchAppException() {
         String path;
@@ -37,9 +46,17 @@ public class AndroidRobot extends Robot {
         Filter filter = new FileFilterImpl();
 
         try {
-            path = "output" + File.separator + date + File.separator + time + File.separator + deviceID + File.separator + "logs" + File.separator;
+        	//保存路径
+            path = "output" + File.separator + date + File.separator + time 
+            		+ File.separator + deviceID + File.separator + "logs" + File.separator;
+            
+            //过滤app.log搜索"crash"
             exceptionInfo = filter.grep(path + "app.log", pers.traveler.constant.Filter.CRASH);
-            exceptionInfo = exceptionInfo + System.getProperty("line.separator") + filter.grep(path + "app.log", pers.traveler.constant.Filter.SYSTEM_ERR);
+           
+            //过滤app.log搜索"System.err"
+            exceptionInfo = exceptionInfo + System.getProperty("line.separator") + 
+            		filter.grep(path + "app.log", pers.traveler.constant.Filter.SYSTEM_ERR);
+            //写入文件
             FileUtil.writeAll(path + "app_err.log", exceptionInfo);
         } catch (IOException e) {
             e.printStackTrace();

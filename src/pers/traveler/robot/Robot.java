@@ -43,12 +43,17 @@ public abstract class Robot {
     protected Device device;
     protected LogManager logManager;
 
+    /**
+     * 实例化机器人，传入config并进行实例化
+     * @param configFile
+     */
     public Robot(String configFile) {
     	//文件路径
         this.configFile = configFile;
         //声明日志管理对象
         logManager = new LogManager();
-        
+        //读取配置文件，并将其实例化 config对象
+        //ConfigProvider 解析 xml文件
         config = new ConfigProvider().getConfig(configFile);
     }
 
@@ -69,6 +74,7 @@ public abstract class Robot {
      */
     protected abstract void catchAppException();
 
+    
     protected String beforeTravel() {
         byte mode;
         int port;

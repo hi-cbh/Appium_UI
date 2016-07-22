@@ -34,6 +34,10 @@ public class TravelerTest {
     }
     
     
+    /**
+     * 获取当前运行工作空间
+     * @return
+     */
 	public static String getWorkSpase() {
 		File directory = new File("");
 		String abPath = directory.getAbsolutePath();
