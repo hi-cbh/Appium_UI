@@ -51,6 +51,7 @@ public class AndroidDevice extends DeviceAdapter {
     @Override
     public boolean killUiautomator() {
         String pid = getUiautomatorProcess();
+        System.out.println("pid: " + pid);
         CmdUtil.run(CmdConfig.KILL_APP_PROCESS.replaceAll("#udid#", udid).replaceAll("#pid#", pid));
         pid = getUiautomatorProcess();
         if (null == pid || pid.isEmpty())

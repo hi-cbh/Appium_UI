@@ -8,27 +8,28 @@
 		<language>zh-Hans</language>
 	</capability>
 	<androidCapability>
-		<app>D:/android_apk/mcontact.apk</app>
+		<app>D:/android_apk/mcontact.apk
+		</app>
 		<udid>0bd08bcc</udid>
 		<platformName>Android</platformName>
 		<platformVersion>4.3</platformVersion>
 		<deviceName>GT_I9308I</deviceName>
 		<appPackage>com.chinamobile.contacts.im</appPackage>
-		<appActivity>.Main</appActivity>
+		<appActivity>.views.MainActivity</appActivity>
 		<unicodeKeyboard>true</unicodeKeyboard>
 		<resetKeyboard>true</resetKeyboard>
-		<noSign>true</noSign>
+		<noSign>false</noSign>
 	</androidCapability>
 	<!--引导流 关键字驱动,引导至所需模块再开始遍历 -->
 	<androidGuideFlow>
-	    <!--滑动类型设置-->
-        <step>slide>>2</step>
-        <!--点击类型设置-->
-        <step>click>>com.chinamobile.contacts.im:id/dialog_btn_positive</step>
 	</androidGuideFlow>
 	<rule>
 		<!--窗口鉴定策略,默认取前8个节点生成md5 -->
 		<identify-default>8</identify-default>
+		<!--Tab窗口用selected区别,可能要多选几个节点到达 -->
+		<identify-special>
+			<define>最新,最热,沙发,精华>>16</define>
+		</identify-special>
 		<!--窗口执行顺序 1:从上到下(默认) 2:从下到上 -->
 		<reverse>1</reverse>
 		<!--控件白名单 -->
@@ -39,22 +40,25 @@
 			<class>android.widget.ImageView</class>
 			<class>android.widget.FrameLayout</class>
 			<class>android.widget.LinearLayout</class>
+			
 		</click>
 		<input>
 			<class>android.widget.EditText</class>
 		</input>
+		<!--启动界面提示框,包含的关键字及操作的控件,针对Android -->
+		<tips>取消>>//android.widget.Button[@resource-id='android:id/button3']
+		</tips>
+		<!--无需返回的列表,需配置识别窗口唯一性的内容 -->
+		<notback>
+			
+		</notback>
+		<!--黑名单 支持text,name,resourceId的过滤 -->
+		<blackList>
+			<item>相机</item>
+			<item>登录</item>
+			<item>com.testerhome.nativeandroid:id/toolbar</item>
+		</blackList>
 		<!--触发器 条件>>动作 支持返回,点击,手势密码解锁,延时等待 -->
-		<trigger>
-			<item>拍照>>back</item>
-			<item>和通讯录>>back</item>
-			<item>家庭网>>back</item>
-			<item>和多号>>back</item>
-			<item>我的分组>>back</item>
-			<item>企业通讯录>>back</item>
-			<item>语音信箱>>back</item>
-			<item>隐私空间>>back</item>
-			<item>校友录>>back</item>
-		</trigger>
 		<!--过滤级别 1:clazz+text+content_desc+resourceId 2:winID+clazz+text+content_desc+resourceId 
 			3:taskID -->
 		<filter>2</filter>
@@ -64,7 +68,7 @@
 	<!--app日志 -->
 	<log>
 		<android>adb -s #udid# logcat -b main -b system -b events -b radio *:D
-			| grep com.chinamobile</android>
+			| grep pingan</android>
 	</log>
 	<global>
 		<!--Appium port -->
@@ -73,17 +77,12 @@
 		<host>127.0.0.1</host>
 		<!--测试类型 1.android 2.ios 3.web -->
 		<mode>1</mode>
-		<!--运行模式 1.遍历模式 2.业务场景模式 -->
-		<runMode>1</runMode>
 		<!--遍历深度 -->
 		<depth>8</depth>
 		<!--截图和视频的目录 -->
 		<screenshot>D:/android_apk/pic_output</screenshot>
-		<!--启动appium -->
-		<runServer>appium -p #port# -bp 4724 --session-override --command-timeout 7200 --udid
-			#udid#</runServer>
-		<!--遍历时间 分 -->
-		<duration>0</duration>
+		<!--遍历时间 分 遍历时间0是不限制 -->
+		<duration>5</duration>
 		<!--延时等待 秒 -->
 		<interval>3</interval>
 		<!--超时 秒 -->
