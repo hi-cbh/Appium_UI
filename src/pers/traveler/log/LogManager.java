@@ -37,6 +37,9 @@ public class LogManager {
         if (null != pidList) {
             for (String pid : pidList) {
                 killCmd = killCmd.replaceAll("#udid#", udid).replaceAll("#pid#", pid);
+                System.out.println("LogManager udid" + udid);
+                System.out.println("LogManager pid" + pid);
+                System.out.println("LogManager stop " + killCmd);
                 CmdUtil.run(killCmd);
             }
         }

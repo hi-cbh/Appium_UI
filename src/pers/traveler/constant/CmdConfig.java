@@ -9,18 +9,23 @@ public interface CmdConfig {
 
     String UUID_IOS = "instruments -s devices|grep -v Devices|cut -d [ -f2|cut -d ] -f1";
 
+    //查看apk包的packageName、versionCode、applicationLabel、launcherActivity、permission等各种详细信息
     String APP_INFO = "aapt dump badging #apk#";
 
-    String APP_CURRENT_ACTIVITY = "adb -s #udid# shell dumpsys activity";
+    //String APP_CURRENT_ACTIVITY = "adb -s #udid# shell dumpsys activity";
+    String APP_CURRENT_ACTIVITY = "adb -s #udid# shell dumpsys activity| find \"mFocusedActivity\"";
+    //adb shell dumpsys activity | find "mFocusedActivity"
 
     String APP_PROCESS_EXISTS = "adb -s #udid# shell ps #package#";
 
     // api level
     String API_LEVEL = "adb -s #udid# shell getprop ro.build.version.sdk";
+    //adb -s #udid# shell getprop ro.build.version.sdk
 
     // release version 平台版本号
     String RELEASE_VERSION = "adb -s #udid# shell getprop ro.build.version.release";
-
+    //
+    
     // system version 系统版本号
     String SYS_VERSION = "adb -s #udid# shell getprop ro.build.version.emui";
 
@@ -35,17 +40,21 @@ public interface CmdConfig {
 
     // resolution 屏幕尺寸
     String RESOLUTION = "adb -s #udid# shell getprop persist.dash.max.rep.resolution";
-
+    //adb -s #udid# shell getprop persist.dash.max.rep.resolution
+    
     // language
     String LANGUAGE = "adb -s #udid# shell getprop persist.sys.language";
+    //adb -s 0bd08bcc shell getprop persist.sys.language
 
-    // kill uiautomator 杀死uiautomator进程
+    // kill uiautomator 杀死uiautomator进程（运行的时候没有找到pid）
     String KILL_APP_PROCESS = "adb -s #udid# shell kill -9 #pid#";
+    //adb -s 0bd08bcc shell kill -9 #pid#
 
     String KILL_SYS_PROCESS = "kill -9 #pid#";
 
     // find uiautomator process 查找uiautomator进程
     String FIND_UIAUTOMATOR_PROCESS = "adb -s #udid# shell ps uiautomator";
+    //adb -s 0bd08bcc shell ps uiautomator
 
     // create dir
     String CREATE_DIR = "mkdir -p #dir#";

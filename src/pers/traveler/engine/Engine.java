@@ -276,8 +276,13 @@ public abstract class Engine {
      * @param source
      * @param depth
      * @return
+     * 
      */
     public Stack<UiNode> getTaskStack(byte type, String source, int depth) {
+    	System.out.println("Engine getTaskStack");
+    	/**
+    	 * 参数：Type.XML = 1 , homePageSource, 1
+    	 */
         List<UiNode> tempForReverse;
         Stack<UiNode> taskStack = null;
 
@@ -291,11 +296,15 @@ public abstract class Engine {
             tempForReverse = new ArrayList<>();
             for (int i = taskStack.size() - 1; i >= 0; i--) {
                 tempForReverse.add(taskStack.get(i));
+                System.out.println("tempForReverse [" + i + "] : " + taskStack.get(i));
             }
             taskStack.clear();
             taskStack.addAll(tempForReverse);
         }
 
+        for(int tmp = taskStack.size() - 1; tmp >= 0; tmp--){
+        	System.out.println("tempForReverse [" + tmp + "] : " + taskStack.get(tmp));
+        }
         return taskStack;
     }
 
@@ -307,6 +316,7 @@ public abstract class Engine {
      * @return
      */
     protected Stack<UiNode> getTaskStackByXml(String pageSource, int depth) {
+    	System.out.println("getTaskStackByXml ");
         Stack<UiNode> taskStack;
         taskStack = parser.getNodesFromWindow(pageSource, depth);
 

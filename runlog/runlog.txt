@@ -1,0 +1,708 @@
+logCmd true: adb -s #udid# logcat -b main -b system -b events -b radio *:D
+			| grep calculators
+2016-09-02 17:29:21 sys_log : [INFO] ############################ Config parameters ############################
+2016-09-02 17:29:21 sys_log : [INFO] mode=1
+2016-09-02 17:29:21 sys_log : [INFO] runMode=0
+2016-09-02 17:29:21 sys_log : [INFO] depth=8
+2016-09-02 17:29:21 sys_log : [INFO] port=4723
+2016-09-02 17:29:21 sys_log : [INFO] reverse=2
+2016-09-02 17:29:21 sys_log : [INFO] filter=2
+2016-09-02 17:29:21 sys_log : [INFO] port=4723
+2016-09-02 17:29:21 sys_log : [INFO] duration=0
+2016-09-02 17:29:21 sys_log : [INFO] interval=3
+2016-09-02 17:29:21 sys_log : [INFO] timeout=30
+2016-09-02 17:29:21 sys_log : [INFO] host=127.0.0.1
+2016-09-02 17:29:21 sys_log : [INFO] app=D:/android_apk/calc.apk
+2016-09-02 17:29:21 sys_log : [INFO] udid=0bd08bcc
+2016-09-02 17:29:21 sys_log : [INFO] tips=null
+2016-09-02 17:29:21 sys_log : [INFO] screenshot=D:/android_apk/pic_output\20160902172921\
+2016-09-02 17:29:21 sys_log : [INFO] appPackage=com.ibox.calculators
+2016-09-02 17:29:21 sys_log : [INFO] identifyDefault=8
+2016-09-02 17:29:21 sys_log : [INFO] guideFlow=[]
+2016-09-02 17:29:21 sys_log : [INFO] clickList=[android.widget.Button]
+2016-09-02 17:29:21 sys_log : [INFO] inputList=[android.widget.EditText]
+2016-09-02 17:29:21 sys_log : [INFO] backList=null
+2016-09-02 17:29:21 sys_log : [INFO] notbackList=null
+2016-09-02 17:29:21 sys_log : [INFO] blackList=[历史记录, 复制, 大写转换, 3, 4, 5, 6, 7, 8, 9, 0, DEL, C, ., =, -, +]
+2016-09-02 17:29:21 sys_log : [INFO] triggerList=[历史记录>>back]
+2016-09-02 17:29:21 sys_log : [INFO] identifySpecialList=null
+2016-09-02 17:29:21 sys_log : [INFO] #########################################################################
+AndroidRobot working 
+beforeTravel 
+命令行运行前的打印： echo %DATE:~0,4%%DATE:~5,2%%DATE:~8,2%
+命令行运行： cmd /c echo %DATE:~0,4%%DATE:~5,2%%DATE:~8,2%
+-------------------------------------------- 
+命令行运行后结果输出： 20160902
+
+-------------------------------------------- 
+命令行运行前的打印： echo %TIME:~0,2%%TIME:~3,2%%TIME:~6,2%
+命令行运行： cmd /c echo %TIME:~0,2%%TIME:~3,2%%TIME:~6,2%
+-------------------------------------------- 
+命令行运行后结果输出： 172921
+
+-------------------------------------------- 
+runMode 1
+deviceID 0bd08bcc
+2016-09-02 17:29:21 sys_log : [INFO] date = 20160902
+2016-09-02 17:29:21 sys_log : [INFO] time = 172921
+mode 1
+port 4723
+host 127.0.0.1
+cmd appium -p #port# -bp 4724 --session-override --command-timeout 7200 --udid
+			#udid#
+timeout 30
+cmd: appium -p 4723 -bp 4724 --session-override --command-timeout 7200 --udid
+			0bd08bcc
+2016-09-02 17:29:21 sys_log : [INFO] start appium >> appium -p 4723 -bp 4724 --session-override --command-timeout 7200 --udid
+			0bd08bcc
+命令行运行前的打印： appium -p 4723 -bp 4724 --session-override --command-timeout 7200 --udid
+			0bd08bcc
+命令行运行： cmd /c appium -p 4723 -bp 4724 --session-override --command-timeout 7200 --udid
+			0bd08bcc
+命令行运行后结果输出：null-------------------------- 
+getCapabilityMap {app=D:/android_apk/calc.apk, appPackage=com.ibox.calculators, noReset=false, noSign=true, appiumVersion=1.0, language=zh-Hans, deviceName=GT_I9308I, appActivity=.CalculatorActivity, autoLaunch=true, platformVersion=4.3, unicodeKeyboard=true, udid=0bd08bcc, platformName=Android, resetKeyboard=true}
+2016-09-02 17:29:51 sys_log : [INFO] ########################### DesiredCapabilities ###########################
+2016-09-02 17:29:51 sys_log : [INFO] app = D:/android_apk/calc.apk
+2016-09-02 17:29:51 sys_log : [INFO] appPackage = com.ibox.calculators
+2016-09-02 17:29:51 sys_log : [INFO] noReset = false
+2016-09-02 17:29:51 sys_log : [INFO] noSign = true
+2016-09-02 17:29:51 sys_log : [INFO] appiumVersion = 1.0
+2016-09-02 17:29:51 sys_log : [INFO] language = zh-Hans
+2016-09-02 17:29:51 sys_log : [INFO] deviceName = GT_I9308I
+2016-09-02 17:29:51 sys_log : [INFO] appActivity = .CalculatorActivity
+2016-09-02 17:29:51 sys_log : [INFO] autoLaunch = true
+2016-09-02 17:29:51 sys_log : [INFO] platformVersion = 4.3
+2016-09-02 17:29:51 sys_log : [INFO] unicodeKeyboard = true
+2016-09-02 17:29:51 sys_log : [INFO] udid = 0bd08bcc
+2016-09-02 17:29:51 sys_log : [INFO] platformName = Android
+2016-09-02 17:29:51 sys_log : [INFO] resetKeyboard = true
+2016-09-02 17:29:51 sys_log : [INFO] ###########################################################################
+2016-09-02 17:29:51 sys_log : [INFO] Appium Server -> http://127.0.0.1:4723/wd/hub
+log4j:WARN No appenders could be found for logger (org.apache.http.client.protocol.RequestAddCookies).
+log4j:WARN Please initialize the log4j system properly.
+path: D:/android_apk/pic_output\20160902172921\
+创建目录: mkdir -p D:/android_apk/pic_output20160902172921\
+命令行运行前的打印： mkdir -p D:/android_apk/pic_output20160902172921\
+命令行运行： cmd /c mkdir -p D:/android_apk/pic_output20160902172921\
+命令行运行后结果输出：null-------------------------- 
+driver.getPageSource <?xml version="1.0" encoding="UTF-8"?><hierarchy rotation="0"><android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][720,1280]" resource-id="" instance="0"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][720,1280]" resource-id="" instance="0"><android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][720,1280]" resource-id="android:id/content" instance="1"><android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][720,1280]" resource-id="" instance="2"><android.widget.RelativeLayout index="0" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][720,1280]" resource-id="" instance="0"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][720,1280]" resource-id="" instance="1"><android.widget.RelativeLayout index="0" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][720,1164]" resource-id="" instance="1"><android.widget.RelativeLayout index="0" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][720,1164]" resource-id="com.ibox.calculators:id/calculator_layout" instance="2"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[20,20][700,300]" resource-id="com.ibox.calculators:id/activity_main_windows" instance="2"><android.widget.RelativeLayout index="1" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[49,0][669,269]" resource-id="com.ibox.calculators:id/cv" instance="3"><android.widget.TextView index="0" text="" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][629,168]" resource-id="" instance="0"/><android.widget.TextView index="1" text="0" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="true" password="false" selected="false" bounds="[0,129][629,249]" resource-id="" instance="1"/></android.widget.RelativeLayout></android.widget.LinearLayout><android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[36,290][684,380]" resource-id="" instance="3"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[40,299][194,371]" resource-id="" instance="4"/><android.widget.Button index="1" text="复制" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="true" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[202,299][356,371]" resource-id="com.ibox.calculators:id/copy_btn" instance="0"/><android.widget.Button index="2" text="大写转换" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[364,299][518,371]" resource-id="com.ibox.calculators:id/convert_btn" instance="1"/><android.widget.Button index="3" text="历史记录" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="true" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[526,299][680,371]" resource-id="com.ibox.calculators:id/record_btn" instance="2"/></android.widget.LinearLayout><android.support.v4.view.ViewPager index="2" text="" class="android.support.v4.view.ViewPager" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="true" long-clickable="false" password="false" selected="false" bounds="[20,380][700,1144]" resource-id="com.ibox.calculators:id/panelswitch" instance="0"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[20,380][700,1144]" resource-id="com.ibox.calculators:id/simplePad" instance="5"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[20,380][680,817]" resource-id="" instance="6"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[20,380][680,525]" resource-id="" instance="7"><android.widget.Button index="0" text="C" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[40,380][185,525]" resource-id="com.ibox.calculators:id/clear" instance="3"/><android.widget.Button index="1" text="DEL" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[205,380][350,525]" resource-id="com.ibox.calculators:id/del" instance="4"/><android.widget.Button index="2" text="÷" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[370,380][515,525]" resource-id="com.ibox.calculators:id/div" instance="5"/><android.widget.Button index="3" text="×" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[535,380][680,525]" resource-id="com.ibox.calculators:id/mul" instance="6"/></android.widget.LinearLayout><android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[20,525][680,671]" resource-id="" instance="8"><android.widget.Button index="0" text="7" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[40,525][185,671]" resource-id="com.ibox.calculators:id/digit7" instance="7"/><android.widget.Button index="1" text="8" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[205,525][350,671]" resource-id="com.ibox.calculators:id/digit8" instance="8"/><android.widget.Button index="2" text="9" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[370,525][515,671]" resource-id="com.ibox.calculators:id/digit9" instance="9"/><android.widget.Button index="3" text="−" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[535,525][680,671]" resource-id="com.ibox.calculators:id/minus" instance="10"/></android.widget.LinearLayout><android.widget.LinearLayout index="2" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[20,671][680,817]" resource-id="" instance="9"><android.widget.Button index="0" text="4" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[40,671][185,817]" resource-id="com.ibox.calculators:id/digit4" instance="11"/><android.widget.Button index="1" text="5" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[205,671][350,817]" resource-id="com.ibox.calculators:id/digit5" instance="12"/><android.widget.Button index="2" text="6" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[370,671][515,817]" resource-id="com.ibox.calculators:id/digit6" instance="13"/><android.widget.Button index="3" text="+" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[535,671][680,817]" resource-id="com.ibox.calculators:id/plus" instance="14"/></android.widget.LinearLayout></android.widget.LinearLayout><android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[20,817][680,1144]" resource-id="" instance="10"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[20,817][515,1144]" resource-id="" instance="11"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[20,817][515,980]" resource-id="" instance="12"><android.widget.Button index="0" text="1" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[40,817][185,980]" resource-id="com.ibox.calculators:id/digit1" instance="15"/><android.widget.Button index="1" text="2" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[205,817][350,980]" resource-id="com.ibox.calculators:id/digit2" instance="16"/><android.widget.Button index="2" text="3" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[370,817][515,980]" resource-id="com.ibox.calculators:id/digit3" instance="17"/></android.widget.LinearLayout><android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[20,980][515,1144]" resource-id="" instance="13"><android.widget.Button index="0" text="0" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[40,980][350,1144]" resource-id="com.ibox.calculators:id/digit0" instance="18"/><android.widget.Button index="1" text="." class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[370,980][515,1144]" resource-id="com.ibox.calculators:id/dot" instance="19"/></android.widget.LinearLayout></android.widget.LinearLayout><android.widget.Button index="1" text="=" class="android.widget.Button" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[535,817][680,1144]" resource-id="com.ibox.calculators:id/equal" instance="20"/></android.widget.LinearLayout></android.widget.LinearLayout></android.support.v4.view.ViewPager></android.widget.RelativeLayout><android.widget.RelativeLayout index="1" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][720,1164]" resource-id="com.ibox.calculators:id/account_layout" instance="4"><android.widget.RelativeLayout index="1" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,20][720,180]" resource-id="com.ibox.calculators:id/relativeLayout_top" instance="5"><android.widget.TextView index="0" text="总收入" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,62][162,110]" resource-id="com.ibox.calculators:id/text_income" instance="2"/><android.widget.TextView index="1" text="总支出" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[540,62][660,110]" resource-id="" instance="3"/><android.widget.TextView index="2" text="0.0" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[10,110][210,158]" resource-id="com.ibox.calculators:id/text_input" instance="4"/><android.widget.TextView index="3" text="日常账本" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[220,62][500,138]" resource-id="com.ibox.calculators:id/text_title" instance="5"/><android.widget.TextView index="4" text="0.0" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[500,110][700,158]" resource-id="com.ibox.calculators:id/text_output" instance="6"/></android.widget.RelativeLayout><android.widget.ExpandableListView index="2" text="" class="android.widget.ExpandableListView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="true" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,180][720,1164]" resource-id="com.ibox.calculators:id/elistview" instance="0"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,180][720,340]" resource-id="" instance="14"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,180][359,340]" resource-id="" instance="15"><android.widget.TextView index="0" text="09月收入" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,180][359,273]" resource-id="com.ibox.calculators:id/input_month" instance="7"/><android.widget.RelativeLayout index="1" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,273][359,283]" resource-id="" instance="6"/><android.widget.TextView index="2" text="0" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,283][359,340]" resource-id="com.ibox.calculators:id/input_money" instance="8"/></android.widget.LinearLayout><android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[359,180][361,340]" resource-id="" instance="16"/><android.widget.LinearLayout index="2" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[361,180][720,340]" resource-id="" instance="17"><android.widget.TextView index="0" text="09月支出" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[361,180][720,273]" resource-id="com.ibox.calculators:id/output_month" instance="9"/><android.widget.RelativeLayout index="1" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[361,273][720,283]" resource-id="" instance="7"/><android.widget.TextView index="2" text="0" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[361,283][720,340]" resource-id="com.ibox.calculators:id/output_money" instance="10"/></android.widget.LinearLayout></android.widget.LinearLayout><android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,340][720,460]" resource-id="" instance="18"><android.widget.RelativeLayout index="0" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,340][308,460]" resource-id="" instance="8"><android.widget.TextView index="0" text="2016年09月02日" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[85,379][308,420]" resource-id="com.ibox.calculators:id/txt_item_time" instance="11"/></android.widget.RelativeLayout><android.widget.RelativeLayout index="1" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[308,340][411,460]" resource-id="" instance="9"><android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[352,392][367,407]" resource-id="com.ibox.calculators:id/img_item_littlecircle" instance="0"/><android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[358,340][361,460]" resource-id="" instance="19"><android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[358,340][361,400]" resource-id="" instance="1"/></android.widget.LinearLayout></android.widget.RelativeLayout><android.widget.LinearLayout index="2" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[411,340][720,460]" resource-id="" instance="20"/></android.widget.LinearLayout></android.widget.ExpandableListView><android.widget.ImageView NAF="true" index="3" text="" class="android.widget.ImageView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[520,360][640,480]" resource-id="com.ibox.calculators:id/account_img" instance="2"/><android.widget.LinearLayout index="4" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,492][660,672]" resource-id="com.ibox.calculators:id/linerlayout_vis" instance="21"><android.widget.TextView index="0" text="账单空空如也" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,552][660,612]" resource-id="com.ibox.calculators:id/txt_up" instance="12"/><android.widget.TextView index="1" text="点击添加按钮，添加新账单" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,612][660,672]" resource-id="com.ibox.calculators:id/txt_down" instance="13"/></android.widget.LinearLayout><android.widget.ImageView NAF="true" index="5" text="" class="android.widget.ImageView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[546,1010][680,1144]" resource-id="com.ibox.calculators:id/add_item" instance="3"/></android.widget.RelativeLayout></android.widget.RelativeLayout><android.widget.RelativeLayout index="1" text="" class="android.widget.RelativeLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,1164][720,1280]" resource-id="" instance="10"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,1164][720,1280]" resource-id="" instance="22"><android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,1164][180,1280]" resource-id="com.ibox.calculators:id/simple_btn_layout" instance="23"><android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[68,1174][112,1232]" resource-id="com.ibox.calculators:id/simple_btn" instance="4"/><android.widget.TextView index="1" text="标准" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[63,1232][117,1270]" resource-id="com.ibox.calculators:id/simple_txt" instance="14"/></android.widget.LinearLayout><android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[180,1174][360,1270]" resource-id="com.ibox.calculators:id/advanced_btn_layout" instance="24"><android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[248,1174][292,1232]" resource-id="com.ibox.calculators:id/advanced_btn" instance="5"/><android.widget.TextView index="1" text="科学" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[243,1232][297,1270]" resource-id="com.ibox.calculators:id/advanced_txt" instance="15"/></android.widget.LinearLayout><android.widget.LinearLayout index="2" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[360,1174][540,1270]" resource-id="com.ibox.calculators:id/account_btn_layout" instance="25"><android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[428,1174][472,1232]" resource-id="com.ibox.calculators:id/account_btn" instance="6"/><android.widget.TextView index="1" text="记账" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[423,1232][477,1270]" resource-id="com.ibox.calculators:id/account_txt" instance="16"/></android.widget.LinearLayout><android.widget.LinearLayout index="3" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[540,1166][720,1277]" resource-id="com.ibox.calculators:id/toolbox_btn_layout" instance="26"><android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[600,1166][660,1226]" resource-id="" instance="3"><android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[608,1169][652,1227]" resource-id="com.ibox.calculators:id/toolbox_about_btn" instance="7"/></android.widget.FrameLayout><android.widget.TextView index="1" text="关于" class="android.widget.TextView" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="true" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[600,1234][660,1277]" resource-id="com.ibox.calculators:id/toolbox_txt" instance="17"/></android.widget.LinearLayout></android.widget.LinearLayout></android.widget.RelativeLayout></android.widget.LinearLayout></android.widget.RelativeLayout><android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.ibox.calculators" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[66,62][148,154]" resource-id="com.ibox.calculators:id/gift_box" instance="27"/></android.widget.FrameLayout></android.widget.FrameLayout></android.widget.LinearLayout></android.widget.FrameLayout></hierarchy>
+cmd: aapt dump badging D:/android_apk/calc.apk
+命令行运行前的打印： aapt dump badging D:/android_apk/calc.apk
+命令行运行： cmd /c aapt dump badging D:/android_apk/calc.apk
+-------------------------------------------- 
+命令行运行后结果输出： package: name='com.ibox.calculators' versionCode='460' versionName='2.0.6'
+sdkVersion:'9'
+targetSdkVersion:'19'
+uses-permission:'android.permission.READ_SETTINGS'
+uses-permission:'com.android.launcher.permission.WRITE_SETTINGS'
+uses-permission:'com.android.launcher.permission.READ_SETTINGS'
+uses-permission:'android.permission.GET_TASKS'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.WAKE_LOCK'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.RECEIVE_BOOT_COMPLETED'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.WRITE_SETTINGS'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.DISABLE_STATUS_BAR'
+uses-permission:'android.permission.EXPAND_STATUS_BAR'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.ACCESS_COARSE_LOCATION'
+uses-permission:'android.permission.ACCESS_COARSE_UPDATES'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.READ_SETTINGS'
+uses-permission:'android.permission.WRITE_SETTINGS'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.WAKE_LOCK'
+uses-permission:'android.permission.SET_WALLPAPER'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.CHANGE_NETWORK_STATE'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.CHANGE_WIFI_STATE'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.MOUNT_UNMOUNT_FILESYSTEMS'
+uses-permission:'android.permission.SYSTEM_ALERT_WINDOW'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.WRITE_SETTINGS'
+uses-permission:'android.permission.READ_EXTERNAL_STORAGE'
+uses-permission:'android.permission.STATUS_BAR'
+uses-permission:'android.permission.RECORD_AUDIO'
+uses-permission:'android.permission.BLUETOOTH'
+uses-permission:'android.permission.ACCESS_FINE_LOCATION'
+uses-permission:'com.android.launcher.permission.INSTALL_SHORTCUT'
+uses-permission:'com.android.launcher.permission.UNINSTALL_SHORTCUT'
+uses-permission:'com.aliyun.homeshell.permission.READ_SETTINGS'
+uses-permission:'com.aliyun.homeshell.permission.WRITE_SETTINGS'
+uses-permission:'com.aliyun.homeshell.permission.INSTALL_SHORTCUT'
+uses-permission:'com.aliyun.homeshell.permission.UNINSTALL_SHORTCUT'
+application-label:'计算器'
+application-label-zh:'计算器'
+application-label-es:'calculadora'
+application-label-ca:'计算器'
+application-label-da:'计算器'
+application-label-fa:'计算器'
+application-label-ja:'计算器'
+application-label-nb:'计算器'
+application-label-be:'计算器'
+application-label-de:'Rechner'
+application-label-af:'计算器'
+application-label-bg:'计算器'
+application-label-th:'计算器'
+application-label-fi:'计算器'
+application-label-hi:'计算器'
+application-label-vi:'计算器'
+application-label-sk:'计算器'
+application-label-uk:'计算器'
+application-label-el:'计算器'
+application-label-nl:'计算器'
+application-label-pl:'计算器'
+application-label-sl:'计算器'
+application-label-tl:'计算器'
+application-label-am:'计算器'
+application-label-in:'计算器'
+application-label-ko:'계산기'
+application-label-ro:'计算器'
+application-label-ar:'الحاسبة'
+application-label-fr:'calculatrice'
+application-label-hr:'计算器'
+application-label-sr:'计算器'
+application-label-tr:'计算器'
+application-label-cs:'计算器'
+application-label-ms:'计算器'
+application-label-et:'计算器'
+application-label-it:'计算器'
+application-label-lt:'计算器'
+application-label-pt:'Calculadora'
+application-label-hu:'计算器'
+application-label-ru:'计算器'
+application-label-zu:'计算器'
+application-label-lv:'计算器'
+application-label-sv:'计算器'
+application-label-iw:'计算器'
+application-label-sw:'计算器'
+application-label-fr_CA:'calculatrice'
+application-label-lo_LA:'计算器'
+application-label-en_GB:'计算器'
+application-label-bn_BD:'计算器'
+application-label-in_ID:'Kalkulator'
+application-label-et_EE:'计算器'
+application-label-ka_GE:'计算器'
+application-label-ky_KG:'计算器'
+application-label-km_KH:'计算器'
+application-label-th_TH:'เครื่องคิดเลข'
+application-label-zh_HK:'計算器'
+application-label-si_LK:'计算器'
+application-label-mk_MK:'计算器'
+application-label-ur_PK:'计算器'
+application-label-sq_AL:'计算器'
+application-label-hy_AM:'计算器'
+application-label-my_MM:'计算器'
+application-label-zh_CN:'计算器'
+application-label-pa_IN:'计算器'
+application-label-ta_IN:'计算器'
+application-label-te_IN:'计算器'
+application-label-ml_IN:'计算器'
+application-label-en_IN:'计算器'
+application-label-kn_IN:'计算器'
+application-label-mr_IN:'计算器'
+application-label-gu_IN:'计算器'
+application-label-mn_MN:'计算器'
+application-label-vi_VN:'máy tính'
+application-label-ja_JP:'電卓'
+application-label-ne_NP:'计算器'
+application-label-pt_BR:'Calculadora'
+application-label-tr_TR:'hesap makinesi'
+application-label-gl_ES:'计算器'
+application-label-eu_ES:'计算器'
+application-label-is_IS:'计算器'
+application-label-es_US:'calculadora'
+application-label-pt_PT:'Calculadora'
+application-label-en_AU:'计算器'
+application-label-ru_RU:'вычислитель'
+application-label-zh_TW:'計算器'
+application-label-ms_MY:'计算器'
+application-label-az_AZ:'计算器'
+application-label-kk_KZ:'计算器'
+application-label-uz_UZ:'计算器'
+application-icon-120:'res/drawable-mdpi-v4/ic_launcher.png'
+application-icon-160:'res/drawable-mdpi-v4/ic_launcher.png'
+application-icon-213:'res/drawable-hdpi-v4/ic_launcher.png'
+application-icon-240:'res/drawable-hdpi-v4/ic_launcher.png'
+application-icon-320:'res/drawable-xhdpi-v4/ic_launcher.png'
+application-icon-480:'res/drawable-xxhdpi-v4/ic_launcher.png'
+application-icon-640:'res/drawable-xxhdpi-v4/ic_launcher.png'
+application: label='计算器' icon='res/drawable-mdpi-v4/ic_launcher.png'
+launchable-activity: name='com.qihoo.util.StartActivity'  label='计算器' icon=''
+uses-feature:'android.hardware.location'
+uses-implied-feature:'android.hardware.location','requested a location access permission'
+uses-feature:'android.hardware.location.gps'
+uses-implied-feature:'android.hardware.location.gps','requested android.permission.ACCESS_FINE_LOCATION permission'
+uses-feature:'android.hardware.location.network'
+uses-implied-feature:'android.hardware.location.network','requested android.permission.ACCESS_COARSE_LOCATION permission'
+uses-feature:'android.hardware.bluetooth'
+uses-implied-feature:'android.hardware.bluetooth','requested android.permission.BLUETOOTH or android.permission.BLUETOOTH_ADMIN permission and targetSdkVersion > 4'
+uses-feature:'android.hardware.microphone'
+uses-implied-feature:'android.hardware.microphone','requested android.permission.RECORD_AUDIO permission'
+uses-feature:'android.hardware.wifi'
+uses-implied-feature:'android.hardware.wifi','requested android.permission.ACCESS_WIFI_STATE, android.permission.CHANGE_WIFI_STATE, or android.permission.CHANGE_WIFI_MULTICAST_STATE permission'
+uses-feature:'android.hardware.touchscreen'
+uses-implied-feature:'android.hardware.touchscreen','assumed you require a touch screen unless explicitly made optional'
+uses-feature:'android.hardware.screen.portrait'
+uses-implied-feature:'android.hardware.screen.portrait','one or more activities have specified a portrait orientation'
+main
+other-activities
+other-receivers
+other-services
+supports-screens: 'small' 'normal' 'large' 'xlarge'
+supports-any-density: 'true'
+locales: '--_--' 'zh' 'es' 'ca' 'da' 'fa' 'ja' 'nb' 'be' 'de' 'af' 'bg' 'th' 'fi' 'hi' 'vi' 'sk' 'uk' 'el' 'nl' 'pl' 'sl' 'tl' 'am' 'in' 'ko' 'ro' 'ar' 'fr' 'hr' 'sr' 'tr' 'cs' 'ms' 'et' 'it' 'lt' 'pt' 'hu' 'ru' 'zu' 'lv' 'sv' 'iw' 'sw' 'fr_CA' 'lo_LA' 'en_GB' 'bn_BD' 'in_ID' 'et_EE' 'ka_GE' 'ky_KG' 'km_KH' 'th_TH' 'zh_HK' 'si_LK' 'mk_MK' 'ur_PK' 'sq_AL' 'hy_AM' 'my_MM' 'zh_CN' 'pa_IN' 'ta_IN' 'te_IN' 'ml_IN' 'en_IN' 'kn_IN' 'mr_IN' 'gu_IN' 'mn_MN' 'vi_VN' 'ja_JP' 'ne_NP' 'pt_BR' 'tr_TR' 'gl_ES' 'eu_ES' 'is_IS' 'es_US' 'pt_PT' 'en_AU' 'ru_RU' 'zh_TW' 'ms_MY' 'az_AZ' 'kk_KZ' 'uz_UZ'
+densities: '120' '160' '213' '240' '320' '480' '640'
+native-code: 'arm64-v8a' 'armeabi' 'armeabi-v7a' 'mips' 'mips64' 'x86' 'x86_64'
+
+-------------------------------------------- 
+getAppInfo appPackage: com.ibox.calculators
+pack com.ibox.calculators
+2016-09-02 17:30:16 sys_log : [INFO] ########################### app environment ###########################
+命令行运行前的打印： adb -s 0bd08bcc shell getprop ro.build.product
+命令行运行： cmd /c adb -s 0bd08bcc shell getprop ro.build.product
+-------------------------------------------- 
+命令行运行后结果输出： s3ve3g
+
+
+-------------------------------------------- 
+2016-09-02 17:30:16 sys_log : [INFO] product = s3ve3g
+命令行运行前的打印： adb -s 0bd08bcc shell getprop ro.build.version.sdk
+命令行运行： cmd /c adb -s 0bd08bcc shell getprop ro.build.version.sdk
+-------------------------------------------- 
+命令行运行后结果输出： 18
+
+
+-------------------------------------------- 
+2016-09-02 17:30:16 sys_log : [INFO] api level = 18
+命令行运行前的打印： adb -s 0bd08bcc shell getprop ro.build.version.release
+命令行运行： cmd /c adb -s 0bd08bcc shell getprop ro.build.version.release
+-------------------------------------------- 
+命令行运行后结果输出： 4.3
+
+
+-------------------------------------------- 
+2016-09-02 17:30:16 sys_log : [INFO] platform version = 4.3
+命令行运行前的打印： adb -s 0bd08bcc shell cat /proc/version
+命令行运行： cmd /c adb -s 0bd08bcc shell cat /proc/version
+-------------------------------------------- 
+命令行运行后结果输出： Linux version 3.4.0-2579767 (se.infra@R0210-11) (gcc version 4.7 (GCC) ) #1 SMP PREEMPT Thu Jul 10 13:38:40 KST 2014
+
+
+-------------------------------------------- 
+2016-09-02 17:30:16 sys_log : [INFO] core version = 3.4.0-2579767
+命令行运行前的打印： adb -s 0bd08bcc shell getprop ro.build.version.emui
+命令行运行： cmd /c adb -s 0bd08bcc shell getprop ro.build.version.emui
+命令行运行后结果输出：null-------------------------- 
+2016-09-02 17:30:16 sys_log : [INFO] system version = 
+命令行运行前的打印： adb -s 0bd08bcc shell getprop ro.build.display.id
+命令行运行： cmd /c adb -s 0bd08bcc shell getprop ro.build.display.id
+-------------------------------------------- 
+命令行运行后结果输出： JLS36C.I9308IZMUANG1
+
+
+-------------------------------------------- 
+2016-09-02 17:30:16 sys_log : [INFO] version = JLS36C.I9308IZMUANG1
+2016-09-02 17:30:16 sys_log : [INFO] app = com.ibox.calculators
+cmd: aapt dump badging D:/android_apk/calc.apk
+命令行运行前的打印： aapt dump badging D:/android_apk/calc.apk
+命令行运行： cmd /c aapt dump badging D:/android_apk/calc.apk
+-------------------------------------------- 
+命令行运行后结果输出： package: name='com.ibox.calculators' versionCode='460' versionName='2.0.6'
+sdkVersion:'9'
+targetSdkVersion:'19'
+uses-permission:'android.permission.READ_SETTINGS'
+uses-permission:'com.android.launcher.permission.WRITE_SETTINGS'
+uses-permission:'com.android.launcher.permission.READ_SETTINGS'
+uses-permission:'android.permission.GET_TASKS'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.WAKE_LOCK'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.RECEIVE_BOOT_COMPLETED'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.WRITE_SETTINGS'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.DISABLE_STATUS_BAR'
+uses-permission:'android.permission.EXPAND_STATUS_BAR'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.ACCESS_COARSE_LOCATION'
+uses-permission:'android.permission.ACCESS_COARSE_UPDATES'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.READ_SETTINGS'
+uses-permission:'android.permission.WRITE_SETTINGS'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.WAKE_LOCK'
+uses-permission:'android.permission.SET_WALLPAPER'
+uses-permission:'android.permission.ACCESS_WIFI_STATE'
+uses-permission:'android.permission.CHANGE_NETWORK_STATE'
+uses-permission:'android.permission.ACCESS_NETWORK_STATE'
+uses-permission:'android.permission.CHANGE_WIFI_STATE'
+uses-permission:'android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission:'android.permission.INTERNET'
+uses-permission:'android.permission.MOUNT_UNMOUNT_FILESYSTEMS'
+uses-permission:'android.permission.SYSTEM_ALERT_WINDOW'
+uses-permission:'android.permission.READ_PHONE_STATE'
+uses-permission:'android.permission.WRITE_SETTINGS'
+uses-permission:'android.permission.READ_EXTERNAL_STORAGE'
+uses-permission:'android.permission.STATUS_BAR'
+uses-permission:'android.permission.RECORD_AUDIO'
+uses-permission:'android.permission.BLUETOOTH'
+uses-permission:'android.permission.ACCESS_FINE_LOCATION'
+uses-permission:'com.android.launcher.permission.INSTALL_SHORTCUT'
+uses-permission:'com.android.launcher.permission.UNINSTALL_SHORTCUT'
+uses-permission:'com.aliyun.homeshell.permission.READ_SETTINGS'
+uses-permission:'com.aliyun.homeshell.permission.WRITE_SETTINGS'
+uses-permission:'com.aliyun.homeshell.permission.INSTALL_SHORTCUT'
+uses-permission:'com.aliyun.homeshell.permission.UNINSTALL_SHORTCUT'
+application-label:'计算器'
+application-label-zh:'计算器'
+application-label-es:'calculadora'
+application-label-ca:'计算器'
+application-label-da:'计算器'
+application-label-fa:'计算器'
+application-label-ja:'计算器'
+application-label-nb:'计算器'
+application-label-be:'计算器'
+application-label-de:'Rechner'
+application-label-af:'计算器'
+application-label-bg:'计算器'
+application-label-th:'计算器'
+application-label-fi:'计算器'
+application-label-hi:'计算器'
+application-label-vi:'计算器'
+application-label-sk:'计算器'
+application-label-uk:'计算器'
+application-label-el:'计算器'
+application-label-nl:'计算器'
+application-label-pl:'计算器'
+application-label-sl:'计算器'
+application-label-tl:'计算器'
+application-label-am:'计算器'
+application-label-in:'计算器'
+application-label-ko:'계산기'
+application-label-ro:'计算器'
+application-label-ar:'الحاسبة'
+application-label-fr:'calculatrice'
+application-label-hr:'计算器'
+application-label-sr:'计算器'
+application-label-tr:'计算器'
+application-label-cs:'计算器'
+application-label-ms:'计算器'
+application-label-et:'计算器'
+application-label-it:'计算器'
+application-label-lt:'计算器'
+application-label-pt:'Calculadora'
+application-label-hu:'计算器'
+application-label-ru:'计算器'
+application-label-zu:'计算器'
+application-label-lv:'计算器'
+application-label-sv:'计算器'
+application-label-iw:'计算器'
+application-label-sw:'计算器'
+application-label-fr_CA:'calculatrice'
+application-label-lo_LA:'计算器'
+application-label-en_GB:'计算器'
+application-label-bn_BD:'计算器'
+application-label-in_ID:'Kalkulator'
+application-label-et_EE:'计算器'
+application-label-ka_GE:'计算器'
+application-label-ky_KG:'计算器'
+application-label-km_KH:'计算器'
+application-label-th_TH:'เครื่องคิดเลข'
+application-label-zh_HK:'計算器'
+application-label-si_LK:'计算器'
+application-label-mk_MK:'计算器'
+application-label-ur_PK:'计算器'
+application-label-sq_AL:'计算器'
+application-label-hy_AM:'计算器'
+application-label-my_MM:'计算器'
+application-label-zh_CN:'计算器'
+application-label-pa_IN:'计算器'
+application-label-ta_IN:'计算器'
+application-label-te_IN:'计算器'
+application-label-ml_IN:'计算器'
+application-label-en_IN:'计算器'
+application-label-kn_IN:'计算器'
+application-label-mr_IN:'计算器'
+application-label-gu_IN:'计算器'
+application-label-mn_MN:'计算器'
+application-label-vi_VN:'máy tính'
+application-label-ja_JP:'電卓'
+application-label-ne_NP:'计算器'
+application-label-pt_BR:'Calculadora'
+application-label-tr_TR:'hesap makinesi'
+application-label-gl_ES:'计算器'
+application-label-eu_ES:'计算器'
+application-label-is_IS:'计算器'
+application-label-es_US:'calculadora'
+application-label-pt_PT:'Calculadora'
+application-label-en_AU:'计算器'
+application-label-ru_RU:'вычислитель'
+application-label-zh_TW:'計算器'
+application-label-ms_MY:'计算器'
+application-label-az_AZ:'计算器'
+application-label-kk_KZ:'计算器'
+application-label-uz_UZ:'计算器'
+application-icon-120:'res/drawable-mdpi-v4/ic_launcher.png'
+application-icon-160:'res/drawable-mdpi-v4/ic_launcher.png'
+application-icon-213:'res/drawable-hdpi-v4/ic_launcher.png'
+application-icon-240:'res/drawable-hdpi-v4/ic_launcher.png'
+application-icon-320:'res/drawable-xhdpi-v4/ic_launcher.png'
+application-icon-480:'res/drawable-xxhdpi-v4/ic_launcher.png'
+application-icon-640:'res/drawable-xxhdpi-v4/ic_launcher.png'
+application: label='计算器' icon='res/drawable-mdpi-v4/ic_launcher.png'
+launchable-activity: name='com.qihoo.util.StartActivity'  label='计算器' icon=''
+uses-feature:'android.hardware.location'
+uses-implied-feature:'android.hardware.location','requested a location access permission'
+uses-feature:'android.hardware.location.gps'
+uses-implied-feature:'android.hardware.location.gps','requested android.permission.ACCESS_FINE_LOCATION permission'
+uses-feature:'android.hardware.location.network'
+uses-implied-feature:'android.hardware.location.network','requested android.permission.ACCESS_COARSE_LOCATION permission'
+uses-feature:'android.hardware.bluetooth'
+uses-implied-feature:'android.hardware.bluetooth','requested android.permission.BLUETOOTH or android.permission.BLUETOOTH_ADMIN permission and targetSdkVersion > 4'
+uses-feature:'android.hardware.microphone'
+uses-implied-feature:'android.hardware.microphone','requested android.permission.RECORD_AUDIO permission'
+uses-feature:'android.hardware.wifi'
+uses-implied-feature:'android.hardware.wifi','requested android.permission.ACCESS_WIFI_STATE, android.permission.CHANGE_WIFI_STATE, or android.permission.CHANGE_WIFI_MULTICAST_STATE permission'
+uses-feature:'android.hardware.touchscreen'
+uses-implied-feature:'android.hardware.touchscreen','assumed you require a touch screen unless explicitly made optional'
+uses-feature:'android.hardware.screen.portrait'
+uses-implied-feature:'android.hardware.screen.portrait','one or more activities have specified a portrait orientation'
+main
+other-activities
+other-receivers
+other-services
+supports-screens: 'small' 'normal' 'large' 'xlarge'
+supports-any-density: 'true'
+locales: '--_--' 'zh' 'es' 'ca' 'da' 'fa' 'ja' 'nb' 'be' 'de' 'af' 'bg' 'th' 'fi' 'hi' 'vi' 'sk' 'uk' 'el' 'nl' 'pl' 'sl' 'tl' 'am' 'in' 'ko' 'ro' 'ar' 'fr' 'hr' 'sr' 'tr' 'cs' 'ms' 'et' 'it' 'lt' 'pt' 'hu' 'ru' 'zu' 'lv' 'sv' 'iw' 'sw' 'fr_CA' 'lo_LA' 'en_GB' 'bn_BD' 'in_ID' 'et_EE' 'ka_GE' 'ky_KG' 'km_KH' 'th_TH' 'zh_HK' 'si_LK' 'mk_MK' 'ur_PK' 'sq_AL' 'hy_AM' 'my_MM' 'zh_CN' 'pa_IN' 'ta_IN' 'te_IN' 'ml_IN' 'en_IN' 'kn_IN' 'mr_IN' 'gu_IN' 'mn_MN' 'vi_VN' 'ja_JP' 'ne_NP' 'pt_BR' 'tr_TR' 'gl_ES' 'eu_ES' 'is_IS' 'es_US' 'pt_PT' 'en_AU' 'ru_RU' 'zh_TW' 'ms_MY' 'az_AZ' 'kk_KZ' 'uz_UZ'
+densities: '120' '160' '213' '240' '320' '480' '640'
+native-code: 'arm64-v8a' 'armeabi' 'armeabi-v7a' 'mips' 'mips64' 'x86' 'x86_64'
+
+-------------------------------------------- 
+getAppInfo appPackage: com.qihoo.util.StartActivity
+2016-09-02 17:30:16 sys_log : [INFO] app activity = com.qihoo.util.StartActivity
+getCurrentActivity cmd adb -s 0bd08bcc shell dumpsys activity| find "mFocusedActivity"
+命令行运行前的打印： adb -s 0bd08bcc shell dumpsys activity| find "mFocusedActivity"
+命令行运行： cmd /c adb -s 0bd08bcc shell dumpsys activity| find "mFocusedActivity"
+-------------------------------------------- 
+命令行运行后结果输出：   mFocusedActivity: ActivityRecord{423dc4d0 u0 com.ibox.calculators/.CalculatorActivity}
+
+
+-------------------------------------------- 
+currentActivity .CalculatorActivity
+2016-09-02 17:30:16 sys_log : [INFO] app current activity = .CalculatorActivity
+命令行运行前的打印： adb -s 0bd08bcc shell ps com.ibox.calculators
+命令行运行： cmd /c adb -s 0bd08bcc shell ps com.ibox.calculators
+-------------------------------------------- 
+命令行运行后结果输出： USER     PID   PPID  VSIZE  RSS     WCHAN    PC         NAME
+
+
+-------------------------------------------- 
+appIsAlive 
+2016-09-02 17:30:16 sys_log : [INFO] app is alive = false
+命令行运行前的打印： adb -s 0bd08bcc shell getprop persist.sys.language
+命令行运行： cmd /c adb -s 0bd08bcc shell getprop persist.sys.language
+-------------------------------------------- 
+命令行运行后结果输出： zh
+
+
+-------------------------------------------- 
+2016-09-02 17:30:17 sys_log : [INFO] language = zh
+命令行运行前的打印： adb -s 0bd08bcc shell getprop persist.dash.max.rep.resolution
+命令行运行： cmd /c adb -s 0bd08bcc shell getprop persist.dash.max.rep.resolution
+命令行运行后结果输出：null-------------------------- 
+2016-09-02 17:30:17 sys_log : [INFO] resolution = 
+命令行运行前的打印： adb -s 0bd08bcc shell ps uiautomator
+命令行运行： cmd /c adb -s 0bd08bcc shell ps uiautomator
+-------------------------------------------- 
+命令行运行后结果输出： USER     PID   PPID  VSIZE  RSS     WCHAN    PC         NAME
+
+shell     22565 395   479856 34220 ffffffff 4008f3d0 S uiautomator
+
+
+-------------------------------------------- 
+2016-09-02 17:30:17 sys_log : [INFO] uiautomator pid = 22565
+2016-09-02 17:30:17 sys_log : [INFO] ########################################################################
+LogManager run
+LogScan 构造函数
+Engine getTaskStack
+getTaskStackByXml 
+getNodesFromWindow
+LogScan run
+getCurrentWindowID
+identifySpecialList: null
+getWindowIdentify(pageSource, config.getIdentifyDefault()c8bcf514c1c26059ce949b3309c344b5
+tempForReverse [4] : pers.traveler.entity.UiNode@43ee72e6
+tempForReverse [3] : pers.traveler.entity.UiNode@23529fee
+tempForReverse [2] : pers.traveler.entity.UiNode@4fe767f3
+tempForReverse [1] : pers.traveler.entity.UiNode@2805c96b
+tempForReverse [0] : pers.traveler.entity.UiNode@184cf7cf
+2016-09-02 17:30:18 sys_log : [INFO] ########################### 开始执行探索性遍历测试 ###########################
+getCurrentWindowID
+identifySpecialList: null
+getWindowIdentify(pageSource, config.getIdentifyDefault()c8bcf514c1c26059ce949b3309c344b5
+2016-09-02 17:30:18 sys_log : [INFO] 报告主人,有1个节点任务出栈并加入黑名单 -> 现在还有4个任务待运行, [android.widget.Button,2,,com.ibox.calculators:id/digit2], c8bcf514c1c26059ce949b3309c344b5-205,817-350,980-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[2]
+命令行运行前的打印： adb -s 0bd08bcc shell "/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png"
+命令行运行： cmd /c adb -s 0bd08bcc shell "/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png"
+命令行运行后结果输出：null-------------------------- 
+命令行运行前的打印： adb -s 0bd08bcc pull /data/local/tmp/screenshot.png D:/android_apk/pic_output20160902172921\0.png
+命令行运行： cmd /c adb -s 0bd08bcc pull /data/local/tmp/screenshot.png D:/android_apk/pic_output20160902172921\0.png
+命令行运行后结果输出：null-------------------------- 
+2016-09-02 17:30:20 sys_log : [ERROR]   java.lang.NullPointerException
+2016-09-02 17:30:20 sys_log : [INFO] 当前节点任务所属窗口是否就是当前窗口 -> true
+2016-09-02 17:30:20 sys_log : [INFO] [android.widget.Button,2,,com.ibox.calculators:id/digit2], c8bcf514c1c26059ce949b3309c344b5 >> 开始执行节点任务......
+2016-09-02 17:30:21 sys_log : [INFO] click -> [info = android.widget.Button,2,,com.ibox.calculators:id/digit2], [depth = 1]c8bcf514c1c26059ce949b3309c344b5-205,817-350,980-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[2]
+getCurrentWindowID
+identifySpecialList: null
+getWindowIdentify(pageSource, config.getIdentifyDefault()c8bcf514c1c26059ce949b3309c344b5
+2016-09-02 17:30:27 sys_log : [INFO] 报告主人,有1个节点任务出栈并加入黑名单 -> 现在还有3个任务待运行, [android.widget.Button,1,,com.ibox.calculators:id/digit1], c8bcf514c1c26059ce949b3309c344b5-40,817-185,980-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[1]
+命令行运行前的打印： adb -s 0bd08bcc shell "/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png"
+命令行运行： cmd /c adb -s 0bd08bcc shell "/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png"
+命令行运行后结果输出：null-------------------------- 
+命令行运行前的打印： adb -s 0bd08bcc pull /data/local/tmp/screenshot.png D:/android_apk/pic_output20160902172921\1.png
+命令行运行： cmd /c adb -s 0bd08bcc pull /data/local/tmp/screenshot.png D:/android_apk/pic_output20160902172921\1.png
+命令行运行后结果输出：null-------------------------- 
+2016-09-02 17:30:30 sys_log : [ERROR]   java.lang.NullPointerException
+2016-09-02 17:30:30 sys_log : [INFO] 当前节点任务所属窗口是否就是当前窗口 -> true
+2016-09-02 17:30:30 sys_log : [INFO] [android.widget.Button,1,,com.ibox.calculators:id/digit1], c8bcf514c1c26059ce949b3309c344b5 >> 开始执行节点任务......
+2016-09-02 17:30:30 sys_log : [INFO] click -> [info = android.widget.Button,1,,com.ibox.calculators:id/digit1], [depth = 1]c8bcf514c1c26059ce949b3309c344b5-40,817-185,980-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[1]
+getCurrentWindowID
+identifySpecialList: null
+getWindowIdentify(pageSource, config.getIdentifyDefault()c8bcf514c1c26059ce949b3309c344b5
+2016-09-02 17:30:36 sys_log : [INFO] 报告主人,有1个节点任务出栈并加入黑名单 -> 现在还有2个任务待运行, [android.widget.Button,−,,com.ibox.calculators:id/minus], c8bcf514c1c26059ce949b3309c344b5-535,525-680,671-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.Button[4]
+命令行运行前的打印： adb -s 0bd08bcc shell "/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png"
+命令行运行： cmd /c adb -s 0bd08bcc shell "/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png"
+命令行运行后结果输出：null-------------------------- 
+命令行运行前的打印： adb -s 0bd08bcc pull /data/local/tmp/screenshot.png D:/android_apk/pic_output20160902172921\2.png
+命令行运行： cmd /c adb -s 0bd08bcc pull /data/local/tmp/screenshot.png D:/android_apk/pic_output20160902172921\2.png
+命令行运行后结果输出：null-------------------------- 
+2016-09-02 17:30:39 sys_log : [ERROR]   java.lang.NullPointerException
+2016-09-02 17:30:39 sys_log : [INFO] 当前节点任务所属窗口是否就是当前窗口 -> true
+2016-09-02 17:30:39 sys_log : [INFO] [android.widget.Button,−,,com.ibox.calculators:id/minus], c8bcf514c1c26059ce949b3309c344b5 >> 开始执行节点任务......
+2016-09-02 17:30:39 sys_log : [INFO] click -> [info = android.widget.Button,−,,com.ibox.calculators:id/minus], [depth = 1]c8bcf514c1c26059ce949b3309c344b5-535,525-680,671-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.Button[4]
+getCurrentWindowID
+identifySpecialList: null
+getWindowIdentify(pageSource, config.getIdentifyDefault()c8bcf514c1c26059ce949b3309c344b5
+2016-09-02 17:30:45 sys_log : [INFO] 报告主人,有1个节点任务出栈并加入黑名单 -> 现在还有1个任务待运行, [android.widget.Button,×,,com.ibox.calculators:id/mul], c8bcf514c1c26059ce949b3309c344b5-535,380-680,525-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[4]
+命令行运行前的打印： adb -s 0bd08bcc shell "/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png"
+命令行运行： cmd /c adb -s 0bd08bcc shell "/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png"
+命令行运行后结果输出：null-------------------------- 
+命令行运行前的打印： adb -s 0bd08bcc pull /data/local/tmp/screenshot.png D:/android_apk/pic_output20160902172921\3.png
+命令行运行： cmd /c adb -s 0bd08bcc pull /data/local/tmp/screenshot.png D:/android_apk/pic_output20160902172921\3.png
+命令行运行后结果输出：null-------------------------- 
+2016-09-02 17:30:48 sys_log : [ERROR]   java.lang.NullPointerException
+2016-09-02 17:30:48 sys_log : [INFO] 当前节点任务所属窗口是否就是当前窗口 -> true
+2016-09-02 17:30:48 sys_log : [INFO] [android.widget.Button,×,,com.ibox.calculators:id/mul], c8bcf514c1c26059ce949b3309c344b5 >> 开始执行节点任务......
+2016-09-02 17:30:48 sys_log : [INFO] click -> [info = android.widget.Button,×,,com.ibox.calculators:id/mul], [depth = 1]c8bcf514c1c26059ce949b3309c344b5-535,380-680,525-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[4]
+getCurrentWindowID
+identifySpecialList: null
+getWindowIdentify(pageSource, config.getIdentifyDefault()c8bcf514c1c26059ce949b3309c344b5
+2016-09-02 17:30:54 sys_log : [INFO] 报告主人,有1个节点任务出栈并加入黑名单 -> 现在还有0个任务待运行, [android.widget.Button,÷,,com.ibox.calculators:id/div], c8bcf514c1c26059ce949b3309c344b5-370,380-515,525-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[3]
+命令行运行前的打印： adb -s 0bd08bcc shell "/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png"
+命令行运行： cmd /c adb -s 0bd08bcc shell "/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png"
+命令行运行后结果输出：null-------------------------- 
+命令行运行前的打印： adb -s 0bd08bcc pull /data/local/tmp/screenshot.png D:/android_apk/pic_output20160902172921\4.png
+命令行运行： cmd /c adb -s 0bd08bcc pull /data/local/tmp/screenshot.png D:/android_apk/pic_output20160902172921\4.png
+命令行运行后结果输出：null-------------------------- 
+2016-09-02 17:30:57 sys_log : [ERROR]   java.lang.NullPointerException
+2016-09-02 17:30:57 sys_log : [INFO] 当前节点任务所属窗口是否就是当前窗口 -> true
+2016-09-02 17:30:57 sys_log : [INFO] [android.widget.Button,÷,,com.ibox.calculators:id/div], c8bcf514c1c26059ce949b3309c344b5 >> 开始执行节点任务......
+2016-09-02 17:30:57 sys_log : [INFO] click -> [info = android.widget.Button,÷,,com.ibox.calculators:id/div], [depth = 1]c8bcf514c1c26059ce949b3309c344b5-370,380-515,525-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[3]
+getCurrentWindowID
+identifySpecialList: null
+getWindowIdentify(pageSource, config.getIdentifyDefault()c8bcf514c1c26059ce949b3309c344b5
+2016-09-02 17:31:03 sys_log : [INFO] c8bcf514c1c26059ce949b3309c344b5 == c8bcf514c1c26059ce949b3309c344b5, 窗口未发生迁移,并且本窗口节点任务已遍历完毕,点击返回......
+2016-09-02 17:31:05 sys_log : [ERROR]   节点任务 -> [info = android.widget.Button,÷,,com.ibox.calculators:id/div], 发生未知异常, 弹出下一个节点任务, c8bcf514c1c26059ce949b3309c344b5-370,380-515,525-//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.Button[3]
+2016-09-02 17:31:05 sys_log : [ERROR]   java.lang.NullPointerException
+LogManager stop
+命令行运行前的打印： adb -s 0bd08bcc shell ps logcat|grep logcat
+命令行运行： cmd /c adb -s 0bd08bcc shell ps logcat|grep logcat
+命令行运行后结果输出：null-------------------------- 
+LogManager udid0bd08bcc
+LogManager pid
+LogManager stop adb -s 0bd08bcc shell kill -9 
+命令行运行前的打印： adb -s 0bd08bcc shell kill -9 
+命令行运行： cmd /c adb -s 0bd08bcc shell kill -9 
+-------------------------------------------- 
+命令行运行后结果输出： usage:	kill [-s signame | -signum | -signame] { job | pid | pgrp } ...
+
+	kill -l [exit_status ...]
+
+
+-------------------------------------------- 
+命令行运行前的打印： adb -s #udid# shell kill -9 #pid#
+命令行运行： cmd /c adb -s #udid# shell kill -9 #pid#
+Exception in thread "main" 命令行运行后结果输出：null-------------------------- 
+org.openqa.selenium.WebDriverException: ERROR running Appium command: Cannot read property 'curDeviceId' of null
+Command duration or timeout: 9 milliseconds
+Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 16:57:40'
+System info: host: 'PC201312241517', ip: '192.168.1.102', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_31'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=D:/android_apk/calc.apk, appPackage=com.ibox.calculators, networkConnectionEnabled=true, noReset=false, noSign=true, warnings={}, appiumVersion=1.0, language=zh-Hans, databaseEnabled=false, deviceName=0bd08bcc, platform=LINUX, appActivity=.CalculatorActivity, desired={app=D:/android_apk/calc.apk, appPackage=com.ibox.calculators, noReset=false, noSign=true, appiumVersion=1.0, language=zh-Hans, deviceName=GT_I9308I, appActivity=.CalculatorActivity, autoLaunch=true, platformVersion=4.3, unicodeKeyboard=true, udid=0bd08bcc, platformName=Android, resetKeyboard=true}, autoLaunch=true, platformVersion=4.3, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, udid=0bd08bcc, platformName=Android, resetKeyboard=true}]
+Session ID: 85db434d-9f76-4ed8-89c7-f687a90a6b33
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at io.appium.java_client.AppiumDriver.removeApp(AppiumDriver.java:250)
+	at pers.traveler.robot.Robot.afterTravel(Robot.java:273)
+	at pers.traveler.robot.AndroidRobot.working(AndroidRobot.java:128)
+	at pers.traveler.robot.Robot.travel(Robot.java:240)
+	at pers.traveler.test.TravelerTest.main(TravelerTest.java:22)

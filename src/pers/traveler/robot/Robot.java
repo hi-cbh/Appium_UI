@@ -74,8 +74,12 @@ public abstract class Robot {
      */
     protected abstract void catchAppException();
 
-    
+    /**
+     * 遍历前，返回开始测试页面PageSource
+     * @return
+     */
     protected String beforeTravel() {
+    	System.out.println("beforeTravel ");
         byte mode;
         int port;
         String cmd;
@@ -87,7 +91,9 @@ public abstract class Robot {
         time = device.getTime();
         runMode = config.getRunMode();
         deviceID = null == config.getUdid() ? UUID.randomUUID().toString() : config.getUdid();
-
+        
+        System.out.println("runMode " + runMode);
+        System.out.println("deviceID " + deviceID);
         try {
             Log.logInfo("date = " + date);
             Log.logInfo("time = " + time);
@@ -101,9 +107,18 @@ public abstract class Robot {
             cmd = config.getRunServer();
             timeout = config.getTimeout();
 
+            System.out.println("mode " + mode);
+            System.out.println("port " + port);
+            System.out.println("host " + host);
+            System.out.println("cmd " + cmd);
+            System.out.println("timeout " + timeout);
+            
             if (null != cmd && !cmd.isEmpty()) {
                 cmd = cmd.replaceAll("#port#", Integer.toString(port)).replaceAll("#udid#", config.getUdid());
+                System.out.println("cmd: "+ cmd);
                 StartAppiumServer startAppiumServer = new StartAppiumServer(cmd);
+                //启动appium 
+                //appium -p 4723 -bp 4724 --session-override --command-timeout 7200 --udid 0bd08bcc
                 startAppiumServer.start();
 
                 try {
@@ -113,8 +128,10 @@ public abstract class Robot {
                 }
             }
 
+            
             capabilityMap = config.getCapabilityMap();
-
+            System.out.println("getCapabilityMap " + capabilityMap);
+            
             Log.logInfo("########################### DesiredCapabilities ###########################");
             DesiredCapabilities capabilities = new DesiredCapabilities();
             for (Map.Entry<String, String> entry : capabilityMap.entrySet()) {
@@ -130,17 +147,27 @@ public abstract class Robot {
                 driver = new IOSDriver(new URL("http://" + host + ":" + port + "/wd/hub"), capabilities);
             }
 
-            System.out.println("path: " + config.getScreenshot()+"\\");
+            System.out.println("path: " + config.getScreenshot());
             
+            String filepath = CmdConfig.CREATE_DIR.replaceAll("#dir#", config.getScreenshot()+"\\");
+            System.out.println("创建目录: " + filepath);
             // 创建图片文件夹
-            CmdUtil.run(CmdConfig.CREATE_DIR.replaceAll("#dir#", config.getScreenshot()+"\\"));
-
+            CmdUtil.run(filepath);
+            
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
 
+        /**
+         * Thread.sleep 和 webdriver.manage().timeouts().implicitlyWait的差别
+         * Thread.sleep() 是线程休眠若干秒，JAVA去实现。等待的时间需要预估的比较准确，但实际上这是很难做到
+         * 
+         * implicitlyWait() 不是休眠，是设置超时时间，是每个driver自己去实现的
+         */
         driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
 
+        //获取获取页面架构：
+        System.out.println("driver.getPageSource " + driver.getPageSource());
         return driver.getPageSource();
     }
 
@@ -190,7 +217,7 @@ public abstract class Robot {
             Log.logInfo("reverse=" + config.getReverse());
             Log.logInfo("filter=" + config.getFilter());
             Log.logInfo("port=" + config.getPort());
-            Log.logInfo("duration=" + config.getDuration());
+            Log.logInfo("duration=" + config.getDuration()); //遍历时间为0，不限制时间
             Log.logInfo("interval=" + config.getInterval());
             Log.logInfo("timeout=" + config.getTimeout());
             Log.logInfo("host=" + config.getHost());
@@ -251,20 +278,22 @@ public abstract class Robot {
             Log.logError(e.fillInStackTrace());
         } finally {
             try {
-                Log.logInfo("开始统计异常信息...");
-                catchAppException();
-                Log.logInfo("统计异常信息完毕!");
+                //Log.logInfo("开始统计异常信息...");
+                //catchAppException();
+                //Log.logInfo("统计异常信息完毕!");
 
-                TimeUnit.SECONDS.sleep(10);
-                Log.logInfo("开始创建视频......");
-                PicToAvi.convertPicToAvi(pngDir, suffix, aviFileName, fps, mWidth, mHeight);
-                Log.logInfo("创建视频完毕!");
+                TimeUnit.SECONDS.sleep(2);
+                //Log.logInfo("开始创建视频......");
+                //PicToAvi.convertPicToAvi(pngDir, suffix, aviFileName, fps, mWidth, mHeight);
+                //Log.logInfo("创建视频完毕!");
                 CmdUtil.run(CmdConfig.KILL_APP_PROCESS);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            } catch (MovieSaveException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
+            } 
+//            catch (MovieSaveException e) {
+//                e.printStackTrace();
+//            } 
+            catch (Exception e) {
                 e.printStackTrace();
             }
         }

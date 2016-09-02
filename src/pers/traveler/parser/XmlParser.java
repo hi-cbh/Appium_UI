@@ -115,6 +115,7 @@ public abstract class XmlParser {
      * @param pageSource
      */
     public Stack<UiNode> getNodesFromWindow(String pageSource, int depth) {
+    	System.out.println("getNodesFromWindow");
         InputSource is = new InputSource(new StringReader(pageSource));
         Stack<UiNode> taskStack = new Stack<>();
         try {
@@ -139,24 +140,31 @@ public abstract class XmlParser {
      * @return
      */
     public String getCurrentWindowID(String pageSource) {
+    	System.out.println("getCurrentWindowID");
         String[] keys;
         int elements;
+        //???
         List<String> identifySpecialList = config.getIdentifySpecialList();
+        System.out.println("identifySpecialList: " + identifySpecialList);
         if (null == identifySpecialList) {
+        	System.out.println("getWindowIdentify(pageSource, config.getIdentifyDefault()" + getWindowIdentify(pageSource, config.getIdentifyDefault()));
             return getWindowIdentify(pageSource, config.getIdentifyDefault());
         } else {
             for (String identifySpecial : identifySpecialList) {
                 keys = identifySpecial.split(">>")[0].split(",");
+                System.out.println("keys: "+ keys);
                 for (int i = 0; i < keys.length; i++) {
                     if (!pageSource.contains(keys[i])) {
                         break;
                     }
                     if (i == keys.length - 1) {
                         elements = Integer.parseInt(identifySpecial.split(">>")[1]);
+                        System.out.println("getWindowIdentify(pageSource, elements)" + getWindowIdentify(pageSource, elements));
                         return getWindowIdentify(pageSource, elements);
                     }
                 }
             }
+            System.out.println("finally: " + getWindowIdentify(pageSource, config.getIdentifyDefault()));
             return getWindowIdentify(pageSource, config.getIdentifyDefault());
         }
     }

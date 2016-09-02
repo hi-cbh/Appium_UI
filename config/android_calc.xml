@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!--Appium 服务关键字 -->
+	<capability>
+		<appiumVersion>1.0</appiumVersion>
+		<autoLaunch>true</autoLaunch>
+		<noReset>false</noReset>
+		<language>zh-Hans</language>
+	</capability>
+	<androidCapability>
+		<app>D:/android_apk/calc.apk</app>
+		<udid>0bd08bcc</udid>
+		<platformName>Android</platformName>
+		<platformVersion>4.3</platformVersion>
+		<deviceName>GT_I9308I</deviceName>
+		<appPackage>com.ibox.calculators</appPackage>
+		<appActivity>.CalculatorActivity</appActivity>
+		<unicodeKeyboard>true</unicodeKeyboard>
+		<resetKeyboard>true</resetKeyboard>
+		<noSign>true</noSign>
+	</androidCapability>
+	<!--引导流 关键字驱动,引导至所需模块再开始遍历 -->
+	<androidGuideFlow>
+	</androidGuideFlow>
+	<rule>
+		<!--窗口鉴定策略,默认取前8个节点生成md5 -->
+		<identify-default>8</identify-default>
+		<!--窗口执行顺序 1:从上到下(默认) 2:从下到上 -->
+		<reverse>2</reverse>
+		<!--控件白名单 -->
+		<click>
+			<class>android.widget.Button</class>
+		</click>
+		<input>
+			<class>android.widget.EditText</class>
+		</input>
+		<!--触发器 条件>>动作 支持返回,点击,手势密码解锁,延时等待 -->
+		<trigger>
+			<item>历史记录>>back</item>
+		</trigger>
+		<blackList>
+		    <item>历史记录</item>
+		    <item>复制</item>
+		    <item>大写转换</item>
+		    <item>3</item>
+		    <item>4</item>
+		    <item>5</item>
+		    <item>6</item>
+		    <item>7</item>
+		    <item>8</item>
+		    <item>9</item>
+		    <item>0</item>
+		    <item>DEL</item>
+		    <item>C</item>
+		    <item>.</item>
+		    <item>=</item>
+		    <item>-</item>
+		    <item>+</item>
+		</blackList>     
+		<!--过滤级别 1:clazz+text+content_desc+resourceId 2:winID+clazz+text+content_desc+resourceId 
+			3:taskID -->
+		<filter>2</filter>
+		<!--退出遍历的条件:同一窗口内的停留次数 -->
+		<allowSameWinTimes>3</allowSameWinTimes>
+	</rule>
+	<!--app日志 -->
+	<log>
+		<android>adb -s #udid# logcat -b main -b system -b events -b radio *:D
+			| grep calculators</android>
+	</log>
+	<global>
+		<!--Appium port -->
+		<port>4723</port>
+		<!--Appium host -->
+		<host>127.0.0.1</host>
+		<!--测试类型 1.android 2.ios 3.web -->
+		<mode>1</mode>
+		<!--运行模式 1.遍历模式 2.业务场景模式 -->
+		<runMode>1</runMode>
+		<!--遍历深度 -->
+		<depth>8</depth>
+		<!--截图和视频的目录 -->
+		<screenshot>D:/android_apk/pic_output</screenshot>
+		<!--启动appium -->
+		<runServer>appium -p #port# -bp 4724 --session-override --command-timeout 7200 --udid
+			#udid#</runServer>
+		<!--遍历时间 分 -->
+		<duration>0</duration>
+		<!--延时等待 秒 -->
+		<interval>3</interval>
+		<!--超时 秒 -->
+		<timeout>30</timeout>
+	</global>
+</config>

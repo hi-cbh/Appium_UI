@@ -39,9 +39,17 @@ public class CmdUtil {
                 }
             }
         }
-        System.out.println("-------------------------------------------- ");
-        System.out.println("命令行运行后结果输出： " + cmdOut);
-        System.out.println("-------------------------------------------- ");
+        
+        if(!cmdOut.trim().equals("")){
+        	System.out.println("-------------------------------------------- ");
+            System.out.println("命令行运行后结果输出： " + cmdOut);
+            System.out.println("-------------------------------------------- ");
+        }
+        else{
+        	System.out.println("命令行运行后结果输出：null-------------------------- ");
+        }
+        
+        
         return null == cmdOut ? null : cmdOut.trim();
     }
 

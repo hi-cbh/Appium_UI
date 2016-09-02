@@ -17,7 +17,7 @@ public class TravelerTest {
         Robot testRobot;
         workspace_path = getWorkSpase();
         try {
-            testRobot = RobotFactory.build(PlatformName.Android, workspace_path+ "\\config\\android.xml");
+            testRobot = RobotFactory.build(PlatformName.Android, workspace_path+ "\\config\\android_calc.xml");
             //testRobot = RobotFactory.build(PlatformName.iOS, "/Users/mac/Documents/intelliJ-idea/AutoTraveler/config/ios.xml");
             testRobot.travel();
         } catch (ClassNotFoundException e) {

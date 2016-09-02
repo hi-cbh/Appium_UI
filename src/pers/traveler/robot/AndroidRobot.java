@@ -45,36 +45,46 @@ public class AndroidRobot extends Robot {
         String exceptionInfo;
         Filter filter = new FileFilterImpl();
 
-        try {
-        	//保存路径
-            path = "output" + File.separator + date + File.separator + time 
-            		+ File.separator + deviceID + File.separator + "logs" + File.separator;
-            
-            //过滤app.log搜索"crash"
-            exceptionInfo = filter.grep(path + "app.log", pers.traveler.constant.Filter.CRASH);
-           
-            //过滤app.log搜索"System.err"
-            exceptionInfo = exceptionInfo + System.getProperty("line.separator") + 
-            		filter.grep(path + "app.log", pers.traveler.constant.Filter.SYSTEM_ERR);
-            //写入文件
-            FileUtil.writeAll(path + "app_err.log", exceptionInfo);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//        	//保存路径
+//            path = "output" + File.separator + date + File.separator + time 
+//            		+ File.separator + deviceID + File.separator + "logs" + File.separator;
+//            
+//            System.out.println("catchAppException path " + path);
+//            
+//            //过滤app.log搜索"crash"
+//            exceptionInfo = filter.grep(path + "app.log", pers.traveler.constant.Filter.CRASH);
+//           
+//            System.out.println("exceptionInfo1 " + exceptionInfo);
+//            //过滤app.log搜索"System.err"
+//            exceptionInfo = exceptionInfo + System.getProperty("line.separator") + 
+//            		filter.grep(path + "app.log", pers.traveler.constant.Filter.SYSTEM_ERR);
+//            System.out.println("exceptionInfo " + exceptionInfo);
+//            //写入文件
+//            FileUtil.writeAll(path + "app_err.log", exceptionInfo);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
     public void working() {
+    	System.out.println("AndroidRobot working ");
         String homePageSource;
         List<String> guideFlow;
         Stack<UiNode> taskStack;
 
         try {
+        	//使用工厂模式，创建对象
             device = DeviceFactory.createDevice(PlatformName.Android, config.getUdid());
+            //获取PageSource
             homePageSource = beforeTravel();
+            //获取引导流操作
             guideFlow = config.getGuideFlow();
 
             String pack = device.getAppPackage(config.getApp());
+            System.out.println("pack " + pack);
+            
             Log.logInfo("########################### app environment ###########################");
             Log.logInfo("product = " + device.getProductModel());
             Log.logInfo("api level = " + device.getApiLevel());
@@ -93,8 +103,10 @@ public class AndroidRobot extends Robot {
 
             engine = EngineFactory.build(PlatformName.Android, driver, config);
 
+            
+            //判断应用是否已安装
             if (((AndroidDriver) driver).isAppInstalled(getRemoveApp()))
-                logManager.run(config);
+                logManager.run(config);  //调用logManager
 
             if (null != guideFlow && guideFlow.size() > 0){
             	//System.out.println("getInterval: "+ config.getInterval());
@@ -105,7 +117,7 @@ public class AndroidRobot extends Robot {
             }
             	
                 
-            	
+            	//遍历模式
             if (runMode == 1) {
                 taskStack = engine.getTaskStack(Type.XML, homePageSource, 1);
 

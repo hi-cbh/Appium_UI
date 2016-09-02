@@ -29,10 +29,11 @@ public class AndroidDevice extends DeviceAdapter {
         String cmd = CmdConfig.APP_INFO.replaceAll("#apk#", apk);
         System.out.println("cmd: " + cmd);
         String appPackage = CmdUtil.run(cmd);
-        System.out.println("appPackage1: " + appPackage);
+        //System.out.println("appPackage1: " + appPackage);
         appPackage = stringFilter.grep(appPackage, filter);
-        System.out.println("appPackage2: " + appPackage);
+        //System.out.println("appPackage2: " + appPackage);
         appPackage = appPackage.split("'")[1];
+        System.out.println("getAppInfo appPackage: " + appPackage.trim());
         return appPackage.trim();
     }
 
@@ -41,6 +42,7 @@ public class AndroidDevice extends DeviceAdapter {
         String cmd = CmdConfig.APP_PROCESS_EXISTS.replaceAll("#udid#", udid).replaceAll("#package#", process);
         String info = CmdUtil.run(cmd);
         info = stringFilter.grep(info, process);
+        System.out.println("appIsAlive " + info);
         if (null == info || info.isEmpty()) {
             return false;
         } else {
@@ -51,9 +53,10 @@ public class AndroidDevice extends DeviceAdapter {
     @Override
     public boolean killUiautomator() {
         String pid = getUiautomatorProcess();
-        System.out.println("pid: " + pid);
+        System.out.println("killUiautomator1 pid: " + pid);
         CmdUtil.run(CmdConfig.KILL_APP_PROCESS.replaceAll("#udid#", udid).replaceAll("#pid#", pid));
         pid = getUiautomatorProcess();
+        System.out.println("killUiautomator2 pid: " + pid);
         if (null == pid || pid.isEmpty())
             return true;
         return false;
@@ -72,10 +75,12 @@ public class AndroidDevice extends DeviceAdapter {
     @Override
     public String getCurrentActivity() {
         String cmd = CmdConfig.APP_CURRENT_ACTIVITY.replaceAll("#udid#", udid);
+        System.out.println("getCurrentActivity cmd " + cmd);
         String currentActivity = CmdUtil.run(cmd);
-        currentActivity = stringFilter.grep(currentActivity, "mFocusedActivity");
+        //currentActivity = stringFilter.grep(currentActivity, "mFocusedActivity");
         currentActivity = currentActivity.substring(currentActivity.indexOf("/") + 1);
         currentActivity = currentActivity.split("}")[0];
+        System.out.println("currentActivity " + currentActivity);
         return currentActivity;
     }
 
