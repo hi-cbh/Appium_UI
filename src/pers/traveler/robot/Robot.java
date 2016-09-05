@@ -41,7 +41,7 @@ public abstract class Robot {
     protected WebDriver driver;
     protected Config config;
     protected Device device;
-    protected LogManager logManager;
+    //protected LogManager logManager;
 
     /**
      * 实例化机器人，传入config并进行实例化
@@ -51,7 +51,7 @@ public abstract class Robot {
     	//文件路径
         this.configFile = configFile;
         //声明日志管理对象
-        logManager = new LogManager();
+        //logManager = new LogManager();
         //读取配置文件，并将其实例化 config对象
         //ConfigProvider 解析 xml文件
         config = new ConfigProvider().getConfig(configFile);
@@ -255,20 +255,21 @@ public abstract class Robot {
      * 测试套件执行后关闭driver。
      */
     public void afterTravel() {
-        int fps = 1;
-        int mWidth = 1440;
-        int mHeight = 860;
-        String suffix = "png";
-        String pngDir = config.getScreenshot();
-        String aviFileName = pngDir + File.separator + "review.avi";
+    	System.out.println("afterTravel");
+//        int fps = 1;
+//        int mWidth = 1440;
+//        int mHeight = 860;
+//        String suffix = "png";
+//        String pngDir = config.getScreenshot();
+        //String aviFileName = pngDir + File.separator + "review.avi";
         String removeApp = getRemoveApp();
 
         try {
             TimeUnit.SECONDS.sleep(config.getInterval());
 
-            logManager.stop(device, config.getUdid());
-
-            if (config.getMode() == PlatformName.ANDROID || config.getMode() == PlatformName.IOS) {
+            //logManager.stop(device, config.getUdid());
+            System.out.println("logManager.stop");
+            if (config.getMode() == PlatformName.ANDROID) {
                 ((AppiumDriver) driver).closeApp();
                 ((AppiumDriver) driver).removeApp(removeApp);
             }
@@ -276,26 +277,35 @@ public abstract class Robot {
 
         } catch (InterruptedException e) {
             Log.logError(e.fillInStackTrace());
-        } finally {
-            try {
-                //Log.logInfo("开始统计异常信息...");
-                //catchAppException();
-                //Log.logInfo("统计异常信息完毕!");
-
-                TimeUnit.SECONDS.sleep(2);
-                //Log.logInfo("开始创建视频......");
-                //PicToAvi.convertPicToAvi(pngDir, suffix, aviFileName, fps, mWidth, mHeight);
-                //Log.logInfo("创建视频完毕!");
-                CmdUtil.run(CmdConfig.KILL_APP_PROCESS);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } 
-//            catch (MovieSaveException e) {
+        } 
+//        finally {
+//            try {
+//                //Log.logInfo("开始统计异常信息...");
+//                //catchAppException();
+//                //Log.logInfo("统计异常信息完毕!");
+//
+//                TimeUnit.SECONDS.sleep(2);
+//                //Log.logInfo("开始创建视频......");
+//                //PicToAvi.convertPicToAvi(pngDir, suffix, aviFileName, fps, mWidth, mHeight);
+//                //Log.logInfo("创建视频完毕!");
+//               // System.out.println(device.getUiautomatorProcess());
+//                
+//                //String tmpkillCmd = CmdConfig.KILL_APP_PROCESS;
+//                
+//                //tmpkillCmd = tmpkillCmd.replaceAll("#udid#", config.getUdid()).replaceAll(
+//						//"#pid#", device.getUiautomatorProcess());
+//                
+//                //CmdUtil.run(tmpkillCmd);
+//                //System.out.println("CmdUtil.run(CmdConfig.KILL_APP_PROCESS);");
+//            } catch (InterruptedException e) {
 //                e.printStackTrace();
 //            } 
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+////            catch (MovieSaveException e) {
+////                e.printStackTrace();
+////            } 
+//            catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 }

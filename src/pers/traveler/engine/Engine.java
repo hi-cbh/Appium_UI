@@ -81,15 +81,18 @@ public abstract class Engine {
                 break;
             thisNode = taskStack.pop();
             blackList.add(thisNode);
-            Log.logInfo("报告主人,有1个节点任务出栈并加入黑名单 -> 现在还有" + taskStack.size() + "个任务待运行, [" + thisNode.getInfo() + "], " + thisNode.getId());
+            Log.logInfo("Sir,有1个节点任务出栈并加入黑名单 -> 现在还有" + taskStack.size() + "个任务待运行, [" + thisNode.getInfo() + "], 节点位置: " + thisNode.getId());
 
             try {
                 // 截图
                 screenShot();
+                System.out.println("第一次截图");
 
+               
                 // 触发器预处理
                 if (triggerProcessing(driver.getPageSource(), triggerList)) {
                     screenShot();
+                    System.out.println("第二次截图");
                     thisPageSource = driver.getPageSource();
                     thisWindow = parser.getCurrentWindowID(thisPageSource);
                 }
@@ -97,16 +100,21 @@ public abstract class Engine {
                 Log.logInfo("当前节点任务所属窗口是否就是当前窗口 -> " + thisNode.getWindowID().equals(thisWindow));
 
                 if (!thisWindow.equals(thisNode.getWindowID())) {
+                	System.out.println("thisWindow");
                     // 在任务栈中搜索当前窗口,如果存在,则获取该窗口下所有任务节点
                     existsTaskStack = searchByWindowID(thisWindow, taskStack);
-
+                    
+ 
                     // 如果当前窗口已存在任务栈中
                     if (null != existsTaskStack) {
+                    	System.out.println("existsTaskStack != null");
+                    	
                         repeatCount = 0;
                         Log.logInfo(thisNode.getWindowID() + " >> " + thisWindow + ", 窗口迁移至老窗口,获取到窗口任务列表 -> " + existsTaskStack.size());
                         resetTaskStack(taskStack, existsTaskStack);
                         Log.logInfo("任务栈已更新,现在还有" + taskStack.size() + "个任务待运行......");
                     } else {
+                    	System.out.println("existsTaskStack == null");
                         Log.logInfo(thisNode.getWindowID() + " >> " + thisWindow + ", 窗口迁移至新窗口......");
                         if (preWindow.equals(thisWindow)) {
                             repeatCount = repeatCount + 1;
@@ -163,9 +171,11 @@ public abstract class Engine {
                 xpath = thisNode.getId().split("-")[3];
                 element = driver.findElement(By.xpath(xpath));
                 if (thisNode.getAction().equals(Action.CLICK)) {
+                	System.out.println("Action.CLICK");
                     Log.logInfo(Action.CLICK + " -> " + "[info = " + thisNode.getInfo() + "], [depth = " + thisNode.getDepth() + "]" + thisNode.getId());
                     element.click();
                 } else if (thisNode.getAction().equals(Action.INPUT)) {
+                	System.out.println("Action.INPUT");
                     Log.logInfo(Action.INPUT + " -> " + "[info = " + thisNode.getInfo() + "], [depth = " + thisNode.getDepth() + "], sendKeys -> 8888, " + thisNode.getId());
                 }
 
@@ -296,15 +306,18 @@ public abstract class Engine {
             tempForReverse = new ArrayList<>();
             for (int i = taskStack.size() - 1; i >= 0; i--) {
                 tempForReverse.add(taskStack.get(i));
-                System.out.println("tempForReverse [" + i + "] : " + taskStack.get(i));
+                //System.out.println("tempForReverse [" + i + "] : " + taskStack.get(i));
             }
             taskStack.clear();
             taskStack.addAll(tempForReverse);
         }
 
-        for(int tmp = taskStack.size() - 1; tmp >= 0; tmp--){
-        	System.out.println("tempForReverse [" + tmp + "] : " + taskStack.get(tmp));
+        for(UiNode un : taskStack){
+        	System.out.println("UiNode id " + un.getId());
+        	//System.out.println("UiNode Text " + un.getElement().getText());
+        	//System.out.println("UiNode Location " + un.getElement().getLocation());
         }
+        
         return taskStack;
     }
 
@@ -819,6 +832,7 @@ public abstract class Engine {
      * @return
      */
     protected Stack<UiNode> searchByWindowID(String windowID, Stack<UiNode> nodeStack) {
+    	System.out.println("searchByWindowID");
         Stack<UiNode> searchStack = new Stack<>();
         for (int i = 0; i < nodeStack.size(); i++) {
             if (nodeStack.get(i).getWindowID().equals(windowID)) {
@@ -826,6 +840,17 @@ public abstract class Engine {
             }
         }
         searchStack = searchStack.size() > 0 ? searchStack : null;
+        
+        if(searchStack !=null && searchStack.size() > 0){
+        	 for(UiNode un: searchStack ){
+             	System.out.println("searchStack " + un.getId());
+             }
+        }
+        else{
+        	System.out.println("searchStack is null");
+        }
+        
+       
         return searchStack;
     }
 
@@ -836,6 +861,17 @@ public abstract class Engine {
      * @param triggerList
      */
     protected boolean triggerProcessing(String pageSource, List<String> triggerList) {
+    	System.out.println("triggerProcessing");
+    	if(triggerList !=null && triggerList.size() > 0){
+    		System.out.println("triggerList.size()" +triggerList.size());
+    		for(String s : triggerList){
+    			System.out.println("triggerList " + s);
+    		}
+    	}
+    	else{
+    		System.out.println("triggerList is null");
+    	}
+    	
         String key;
         String action;
         List<String> keyList;
@@ -844,7 +880,10 @@ public abstract class Engine {
                 keyList = new ArrayList<>();
                 key = trigger.split(">>")[0];
                 action = trigger.split(">>")[1];
-
+                
+                System.out.println("key " + key);
+                System.out.println("action " + action);
+           
                 if (key.indexOf("|") == -1) {
                     keyList.add(key);
                 } else {
@@ -853,16 +892,22 @@ public abstract class Engine {
                 if (needTrigger(pageSource, keyList)) {
                     try {
                         if (action.equalsIgnoreCase(Action.BACK)) {
+                        	System.out.println("doBackNoTrigger()");
                             doBackNoTrigger();
                         } else if (action.indexOf("->") != -1 && action.split("->")[0].equalsIgnoreCase(Action.GESTURE)) {
                             action = action.split("->")[1];
+                            System.out.println("手势滑动");
                             GesturePWD(getGesturepwdWebElements(action, new int[]{1, 2, 3, 6, 5, 4, 7, 8, 9}));
                         } else if (action.indexOf("->") != -1 && action.split("->")[0].equalsIgnoreCase(Action.DELAY)) {
-                            break;
+                            System.out.println("DELAY");
+                        	break;
                         } else {
+                        	System.out.println("click");
                             driver.findElement(By.xpath(action)).click();
                         }
+                        //等待时延
                         TimeUnit.SECONDS.sleep(config.getInterval());
+                        System.out.println("triggerProcessing return true");
                         return true;
                     } catch (NoSuchElementException e) {
                         Log.logError(e.fillInStackTrace());
@@ -872,7 +917,13 @@ public abstract class Engine {
                     }
                 }
             }
+        
+    
+        
+        
         }
+        
+        System.out.println("triggerProcessing return false");
         return false;
     }
 

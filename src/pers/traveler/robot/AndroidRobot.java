@@ -99,14 +99,15 @@ public class AndroidRobot extends Robot {
             Log.logInfo("language = " + device.getLanguage());
             Log.logInfo("resolution = " + device.getResolution());
             Log.logInfo("uiautomator pid = " + device.getUiautomatorProcess());
+            Log.logInfo("getLogCatPID " + device.getLogCatPID());
             Log.logInfo("########################################################################");
 
             engine = EngineFactory.build(PlatformName.Android, driver, config);
 
             
-            //判断应用是否已安装
-            if (((AndroidDriver) driver).isAppInstalled(getRemoveApp()))
-                logManager.run(config);  //调用logManager
+//            //判断应用是否已安装
+//            if (((AndroidDriver) driver).isAppInstalled(getRemoveApp()))
+//                logManager.run(config);  //调用logManager
 
             if (null != guideFlow && guideFlow.size() > 0){
             	//System.out.println("getInterval: "+ config.getInterval());

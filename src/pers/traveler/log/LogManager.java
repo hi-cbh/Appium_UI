@@ -19,6 +19,7 @@ public class LogManager {
     	System.out.println("LogManager run");
     	//实例化 LogScan对象，并传入
         logScan = new LogScan(config.getLogCmd().replaceAll("#udid#", config.getUdid()));
+        
         //adb -s 0bd08bcc logcat -b main -b system -b events -b radio *:D| grep contacts
         
         //这里有EBUG，用这个无法打印应用log
@@ -29,19 +30,24 @@ public class LogManager {
     }
 
     //停止进程
-    public void stop(Device device, String udid) {
-    	System.out.println("LogManager stop");
-        String killCmd;
-        List<String> pidList = device.getLogCatPID();
-        killCmd = device instanceof AndroidDevice ? CmdConfig.KILL_APP_PROCESS : CmdConfig.KILL_SYS_PROCESS;
-        if (null != pidList) {
-            for (String pid : pidList) {
-                killCmd = killCmd.replaceAll("#udid#", udid).replaceAll("#pid#", pid);
-                System.out.println("LogManager udid" + udid);
-                System.out.println("LogManager pid" + pid);
-                System.out.println("LogManager stop " + killCmd);
-                CmdUtil.run(killCmd);
-            }
-        }
-    }
+	public void stop(Device device, String udid) {
+		System.out.println("LogManager stop");
+		String killCmd;
+		List<String> pidList = device.getLogCatPID();
+		killCmd = device instanceof AndroidDevice ? CmdConfig.KILL_APP_PROCESS
+				: CmdConfig.KILL_SYS_PROCESS;
+		System.out.println("killCmd" + killCmd);
+		if (null != pidList && pidList.size() > 0) {
+			for (String pid : pidList) {
+				if (pid.equals("")) {
+					System.out.println("pid is null");
+				} else {
+					killCmd = killCmd.replaceAll("#udid#", udid).replaceAll(
+							"#pid#", pid);
+					CmdUtil.run(killCmd);
+				}
+
+			}
+		}
+	}
 }

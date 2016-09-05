@@ -36,12 +36,13 @@
 		</input>
 		<!--触发器 条件>>动作 支持返回,点击,手势密码解锁,延时等待 -->
 		<trigger>
-			<item>历史记录>>back</item>
+			
 		</trigger>
 		<blackList>
 		    <item>历史记录</item>
 		    <item>复制</item>
 		    <item>大写转换</item>
+		    <item>2</item>
 		    <item>3</item>
 		    <item>4</item>
 		    <item>5</item>
@@ -54,8 +55,10 @@
 		    <item>C</item>
 		    <item>.</item>
 		    <item>=</item>
-		    <item>-</item>
+		    <item>÷</item>
 		    <item>+</item>
+		    <item>−</item>
+		    <item>×</item>
 		</blackList>     
 		<!--过滤级别 1:clazz+text+content_desc+resourceId 2:winID+clazz+text+content_desc+resourceId 
 			3:taskID -->

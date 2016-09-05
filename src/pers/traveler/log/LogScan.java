@@ -88,16 +88,20 @@ public class LogScan extends Thread {
             
             br = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String line;
+            System.out.println("getLogCmd start");
             while ((line = br.readLine()) != null) {
             	//插入记录信息（格式化日志信息）
                 logger.info(line);
             }
+            System.out.println("getLogCmd end");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (br != null) {
                 try {
+                	System.out.println("getLogCmd end");
                     br.close();
+                    
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

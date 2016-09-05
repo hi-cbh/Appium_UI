@@ -143,16 +143,24 @@ public class AndroidDevice extends DeviceAdapter {
     public List<String> getLogCatPID() {
         List<String> pidList = null;
         String logCatPID = CmdUtil.run(CmdConfig.LOG_CAT_PID.replaceAll("#udid#", udid));
-
+        System.out.println("logCatPID1 " + logCatPID);
         if (null != logCatPID) {
             pidList = new ArrayList<>();
             logCatPID = stringFilter.columns(logCatPID, 2);
+            System.out.println("logCatPID2 " + logCatPID);
             if (logCatPID.indexOf(System.getProperty("line.separator")) != -1) {
                 pidList = Arrays.asList(logCatPID.split(System.getProperty("line.separator")));
             } else {
                 pidList.add(logCatPID);
             }
 
+        }
+        if(pidList != null && pidList.size() > 0){
+        	for(String s : pidList){
+        		System.out.println("pidList " + s);
+        	}
+        }else{
+        	System.out.println("pidList  null");
         }
         return pidList;
     }
