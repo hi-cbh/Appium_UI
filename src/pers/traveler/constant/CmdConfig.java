@@ -56,8 +56,8 @@ public interface CmdConfig {
     String FIND_UIAUTOMATOR_PROCESS = "adb -s #udid# shell ps uiautomator";
     //adb -s 0bd08bcc shell ps uiautomator
 
-    // create dir
-    String CREATE_DIR = "mkdir -p #dir#";
+    // create dir windows 不需要 -p
+    String CREATE_DIR = "mkdir #dir#";
 
     // screen capture
     String SCREEN_CAP = "adb -s #udid# shell \"/system/bin/rm /data/local/tmp/screenshot.png;/system/bin/screencap -p /data/local/tmp/screenshot.png\"";
